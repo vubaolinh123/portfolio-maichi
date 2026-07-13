@@ -1795,6 +1795,10 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 .reflections__header {
   max-width: 1300px;
   margin: 0 auto 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reflections__eyebrow {
@@ -1815,6 +1819,8 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: var(--burgundy);
+  overflow: hidden; /* Fix title character overlap by masking overflow */
+  padding-bottom: 0.08em;
 }
 
 .reflections__title .char {
@@ -1830,6 +1836,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   opacity: 0.65;
   max-width: 600px;
   margin-top: 24px;
+  text-align: center;
 }
 
 /* Stat Grid Row */
@@ -1916,6 +1923,10 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   opacity: 0;
   transform: translateY(30px);
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .reflections__section.reveal {
@@ -1945,6 +1956,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   letter-spacing: -0.01em;
   color: var(--burgundy);
   margin-bottom: 40px;
+  text-align: center;
 }
 
 /* 3-Column Grid for Things Learned */
@@ -1952,6 +1964,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  width: 100%;
 }
 
 @media (max-width: 900px) {
@@ -1967,6 +1980,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   border-radius: 8px;
   padding: 36px 28px;
   transition: transform 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+  text-align: left;
 }
 
 .ref-card:hover {
@@ -1997,42 +2011,55 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   opacity: 0.7;
 }
 
-/* 2-Column Grid for Lessons */
+/* 1-Column Stack for Lessons Learned */
 .reflections__grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-@media (max-width: 768px) {
-  .reflections__grid-2 {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .lesson-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 36px);
+  text-align: left;
   background: rgba(90, 0, 0, 0.02);
   border: 1px solid rgba(90, 0, 0, 0.06);
+  border-left: 4px solid rgba(90, 0, 0, 0.15);
   border-radius: 8px;
-  padding: 32px 28px;
+  padding: 28px clamp(24px, 4vw, 36px);
   position: relative;
-  transition: transform 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, border-left-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .lesson-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(90, 0, 0, 0.15);
+  transform: scale(1.015) translateX(8px);
+  border-color: rgba(90, 0, 0, 0.2);
+  border-left-color: var(--gold); /* Gold highlight border on hover */
+  background: rgba(90, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(90, 0, 0, 0.04);
 }
 
 .lesson-card__num {
   font-family: var(--font-serif);
-  font-size: 48px;
+  font-size: clamp(36px, 5vw, 56px);
   font-weight: 300;
   line-height: 1;
   color: var(--gold);
-  opacity: 0.25;
-  margin-bottom: 16px;
+  opacity: 0.8;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.lesson-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .lesson-card__title {
@@ -2040,24 +2067,30 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   font-size: clamp(16px, 1.8vw, 19px);
   font-weight: 600;
   color: var(--burgundy);
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .lesson-card__text {
   font-family: var(--font-sans);
   font-size: 14px;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--burgundy);
   opacity: 0.7;
+  margin-bottom: 0;
 }
 
-/* Skills Progress Grid */
+/* Skills Progress Grid (centered) */
 .ref-skills-grid {
   display: flex;
   flex-direction: column;
   gap: 28px;
+  width: 100%;
   max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
+
+
 
 .skill-progress {
   width: 100%;
