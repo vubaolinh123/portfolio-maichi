@@ -368,7 +368,8 @@ function buildProjectCards() {
         </div>
 
         <button class="project-block__cta" data-id="${proj.id}" id="cta-${proj.id}">
-          See Details <span aria-hidden="true">→</span>
+          <span class="project-block__cta-label">Xem chi tiết</span>
+          <span class="project-block__cta-arrow" aria-hidden="true">→</span>
         </button>
       </div>
 

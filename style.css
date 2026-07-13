@@ -881,38 +881,67 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   position: relative;
 }
 
-/* Clean CTA Link */
+/* Project CTA Button — Pill Style */
 .project-block__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
   background: transparent;
-  border: none;
-  padding: 0;
+  border: 1.5px solid rgba(245, 241, 230, 0.5);
+  border-radius: 100px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--cream);
-  display: flex;
-  align-items: center;
-  gap: 12px;
   cursor: pointer;
   position: relative;
-  transition: opacity 0.3s ease;
+  overflow: hidden;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  margin-top: 8px;
 }
 
-.project-block__cta::after {
+/* Animated fill background on hover */
+.project-block__cta::before {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 1px;
+  inset: 0;
   background: var(--cream);
-  transition: width 0.3s ease;
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: inherit;
+  z-index: 0;
 }
 
-.project-block__cta:hover::after {
-  width: 100%;
+.project-block__cta:hover::before {
+  transform: translateX(0);
+}
+
+.project-block__cta:hover {
+  color: var(--burgundy);
+  border-color: var(--cream);
+}
+
+/* Keep text above the animated fill */
+.project-block__cta span,
+.project-block__cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Arrow icon */
+.project-block__cta-arrow {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  display: inline-flex;
+}
+
+.project-block__cta:hover .project-block__cta-arrow {
+  transform: translateX(4px);
 }
 
 /* ──────────────────────────────────
