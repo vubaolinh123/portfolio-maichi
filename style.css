@@ -211,12 +211,12 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   left: clamp(20px, 4vw, 60px);
   bottom: clamp(28px, 5vh, 56px);
   font-family: var(--font-serif);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--burgundy);
-  opacity: 0.18;
+  opacity: 0.35;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   pointer-events: none;
@@ -440,9 +440,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   position: absolute;
   bottom: 32px; right: clamp(20px, 4vw, 60px);
   font-family: var(--font-serif);
-  font-size: 11px;
-  letter-spacing: 0.25em;
-  opacity: 0.22;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  opacity: 0.35;
   writing-mode: vertical-rl;
   color: var(--burgundy);
 }
@@ -1578,6 +1578,10 @@ body.on-dark .dot-nav__item { background: var(--cream); }
     padding-top: calc(var(--header-h) + 40px);
     padding-bottom: 40px;
     min-height: 100vh;
+  }
+
+  .hero__bg-text, .hero__year {
+    display: none; /* Hide vertical layout noises on mobile devices */
   }
 
   .hero__content {
