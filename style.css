@@ -708,6 +708,138 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 }
 
 /* ============================================================
+   HOME TIMELINE SECTION
+   ============================================================ */
+.home-timeline {
+  background: var(--cream);
+  padding: clamp(80px, 12vh, 140px) clamp(20px, 6vw, 100px);
+  border-top: 1px solid var(--cream-border);
+}
+
+.home-timeline__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home-timeline__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  opacity: 0.5;
+  margin-bottom: 32px;
+}
+
+.home-timeline__title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--burgundy);
+  margin-bottom: 56px;
+}
+
+.home-timeline__title em {
+  font-style: italic;
+  color: var(--burgundy);
+  opacity: 0.65;
+}
+
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  padding-left: 48px;
+  margin-top: 40px;
+}
+
+.timeline__line {
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: rgba(90, 0, 0, 0.12); /* Burgundy line */
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Node/Dot */
+.timeline__node {
+  position: absolute;
+  left: -48px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 3px solid rgba(90, 0, 0, 0.4);
+  z-index: 2;
+  transform: scale(1);
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Timeline badge */
+.timeline__badge {
+  display: inline-flex;
+  padding: 4px 12px;
+  background: rgba(90, 0, 0, 0.06);
+  color: var(--burgundy);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.timeline__item-title {
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 600;
+  color: var(--burgundy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.timeline__item-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.4vw, 15px);
+  line-height: 1.65;
+  color: var(--burgundy);
+  opacity: 0.7;
+  max-width: 720px;
+}
+
+/* Interactive Timeline Item Hover & Active States */
+.timeline__item:hover .timeline__node {
+  transform: scale(1.35);
+  border-color: var(--burgundy);
+  background: var(--burgundy);
+}
+
+.timeline__item.active .timeline__node {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
+  transform: scale(1.1);
+}
+
+/* ============================================================
    HOME NAV PREVIEW SECTION
    ============================================================ */
 .home-nav {
@@ -1982,17 +2114,19 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 
 /* ============================================================
-   HOME SKILLS SECTION
+   HOME SKILLS SECTION — Marquee Ticker
    ============================================================ */
 .home-skills {
   background: var(--burgundy);
-  padding: clamp(80px, 10vh, 120px) clamp(20px, 6vw, 100px);
+  padding: clamp(80px, 10vh, 120px) 0;
   border-top: 1px solid rgba(245,241,230,0.08);
+  overflow: hidden;
 }
 
 .home-skills__inner {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 clamp(20px, 6vw, 100px);
 }
 
 .home-skills__eyebrow {
@@ -2024,65 +2158,127 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   color: var(--gold);
 }
 
-.home-skills__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+/* Infinite Marquee Ticker */
+.skills-ticker {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+  user-select: none;
 }
 
-@media (max-width: 900px) {
-  .home-skills__grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+.skills-ticker__track {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.skills-ticker__track--left {
+  animation: scroll-left 36s linear infinite;
+}
+
+.skills-ticker__track--right {
+  animation: scroll-right 36s linear infinite;
+}
+
+.skills-ticker:hover .skills-ticker__track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-.home-skills__col-label {
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(245,241,230,0.1);
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.home-skills__tags {
+/* Legend */
+.home-skills__legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  gap: 24px 32px;
+  margin-top: 48px;
+  padding: 0 20px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.home-skills__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cream);
+  opacity: 0.6;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot--filled {
+  background: var(--cream);
+  border: 1px solid rgba(245,241,230,0.2);
+}
+
+.legend-dot--plain {
+  border: 1px solid rgba(245,241,230,0.5);
+}
+
+.legend-dot--gold {
+  border: 1px solid var(--gold);
+  background: var(--gold);
 }
 
 /* Skill Chips */
 .skill-chip {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  padding: 8px 16px;
+  padding: 10px 22px;
   border-radius: 100px;
-  border: 1px solid rgba(245,241,230,0.2);
+  border: 1px solid rgba(245,241,230,0.18);
   color: rgba(245,241,230,0.75);
   background: transparent;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
   cursor: default;
+  display: inline-block;
 }
 
 .skill-chip:hover {
   border-color: rgba(245,241,230,0.5);
   color: var(--cream);
+  transform: translateY(-2px);
 }
 
 .skill-chip--primary {
-  background: rgba(245,241,230,0.08);
-  border-color: rgba(245,241,230,0.25);
+  background: rgba(245,241,230,0.06);
+  border-color: rgba(245,241,230,0.22);
   color: var(--cream);
 }
 
 .skill-chip--primary:hover {
-  background: rgba(245,241,230,0.15);
+  background: rgba(245,241,230,0.12);
   border-color: rgba(245,241,230,0.5);
 }
 
@@ -2094,8 +2290,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .skill-chip--outline:hover {
   opacity: 1;
-  background: rgba(196,160,95,0.08);
+  background: rgba(196,160,95,0.06);
 }
+
 
 /* ============================================================
    HOME INFO SECTION (Interests + Quote + Contact)

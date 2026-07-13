@@ -168,6 +168,83 @@
       </section>
 
       <!-- ============================================================
+           TIMELINE: QUÁ TRÌNH HỌC TẬP
+           ============================================================ -->
+      <section class="home-timeline" id="home-timeline">
+        <div class="home-timeline__inner">
+          <div class="home-timeline__eyebrow">
+            <span class="home-nav__dot"></span>
+            <span>Lộ trình bài tập</span>
+          </div>
+          <h2 class="home-timeline__title">Quá trình <em>học tập</em></h2>
+
+          <div class="timeline">
+            <div class="timeline__line"></div>
+            
+            <!-- Item 1 -->
+            <div class="timeline__item">
+              <div class="timeline__node"></div>
+              <div class="timeline__content">
+                <span class="timeline__badge">BÀI TẬP 1</span>
+                <h3 class="timeline__item-title">Máy tính và các thiết bị ngoại vi</h3>
+                <p class="timeline__item-desc">Tìm hiểu cấu trúc máy tính và hệ sinh thái thiết bị ngoại vi — nền tảng để sử dụng hiệu quả các công cụ số phục vụ học tập và công việc.</p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline__item">
+              <div class="timeline__node"></div>
+              <div class="timeline__content">
+                <span class="timeline__badge">BÀI TẬP 2</span>
+                <h3 class="timeline__item-title">Khai thác dữ liệu và thông tin</h3>
+                <p class="timeline__item-desc">Xây dựng kỹ năng tìm kiếm, đánh giá và tổ chức thông tin số — kỹ năng then chốt trong nghiên cứu thị trường và phân tích dữ liệu.</p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="timeline__item">
+              <div class="timeline__node"></div>
+              <div class="timeline__content">
+                <span class="timeline__badge">BÀI TẬP 3</span>
+                <h3 class="timeline__item-title">Tổng quan về trí tuệ nhân tạo</h3>
+                <p class="timeline__item-desc">Khám phá cách AI định hình lại kinh doanh — thực hành sử dụng ChatGPT/Gemini để tối ưu hiệu suất học tập và viết prompt hiệu quả.</p>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="timeline__item">
+              <div class="timeline__node"></div>
+              <div class="timeline__content">
+                <span class="timeline__badge">BÀI TẬP 4</span>
+                <h3 class="timeline__item-title">Giao tiếp và hợp tác trong môi trường số</h3>
+                <p class="timeline__item-desc">Thành thạo các công cụ cộng tác trực tuyến nhóm hybrid, nguyên tắc viết email chuyên nghiệp và xây dựng hồ sơ LinkedIn.</p>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="timeline__item">
+              <div class="timeline__node"></div>
+              <div class="timeline__content">
+                <span class="timeline__badge">BÀI TẬP 5</span>
+                <h3 class="timeline__item-title">Sáng tạo nội dung số</h3>
+                <p class="timeline__item-desc">Thực hành sản xuất nội dung số đa định dạng (bài viết LinkedIn, Infographic Canva, video ngắn) áp dụng tư duy storytelling.</p>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="timeline__item">
+              <div class="timeline__node"></div>
+              <div class="timeline__content">
+                <span class="timeline__badge">BÀI TẬP 6</span>
+                <h3 class="timeline__item-title">An toàn và liêm chính học thuật trong môi trường số</h3>
+                <p class="timeline__item-desc">Xây dựng nền tảng đạo đức số, thực hiện Personal Security Audit, nhận diện phishing và ứng dụng AI có đạo đức.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
            HOME NAV PREVIEW — Giới thiệu các trang trong portfolio
            ============================================================ -->
       <section class="home-nav" id="home-nav">
@@ -193,10 +270,12 @@
                 06 bài tập thực hành về các kỹ năng số cốt lõi — từ phần cứng máy tính, khai thác thông tin, trí tuệ nhân tạo đến sáng tạo nội dung và an toàn số. Mỗi bài là một hành trình học tập thực tiễn.
               </p>
               <ul class="home-nav__card-tags">
-                <li>Phần cứng & Thiết bị</li>
-                <li>AI & Tự động hóa</li>
-                <li>Nội dung số</li>
-                <li>An toàn mạng</li>
+                <li>Thiết bị ngoại vi</li>
+                <li>Khai thác dữ liệu</li>
+                <li>Trí tuệ nhân tạo</li>
+                <li>Cộng tác số</li>
+                <li>Sáng tạo nội dung</li>
+                <li>An toàn số</li>
               </ul>
               <button class="home-nav__card-cta" data-target="projects" id="hnav-btn-projects">
                 <span>Xem tất cả dự án</span>
@@ -234,7 +313,7 @@
       </section><!-- /home-nav -->
 
       <!-- ============================================================
-           SKILLS SECTION
+           SKILLS SECTION — Marquee Ticker
            ============================================================ -->
       <section class="home-skills" id="home-skills">
         <div class="home-skills__inner">
@@ -243,43 +322,77 @@
             <span>Kỹ năng số</span>
           </div>
           <h2 class="home-skills__title">Công cụ &amp; <em>Năng lực</em></h2>
+        </div>
 
-          <div class="home-skills__grid">
-            <!-- Digital Tools -->
-            <div class="home-skills__col">
-              <div class="home-skills__col-label">Công cụ số</div>
-              <div class="home-skills__tags">
-                <span class="skill-chip skill-chip--primary">Microsoft Office</span>
-                <span class="skill-chip skill-chip--primary">Google Workspace</span>
-                <span class="skill-chip skill-chip--primary">Canva</span>
-                <span class="skill-chip skill-chip--primary">ChatGPT / Gemini</span>
-                <span class="skill-chip skill-chip--primary">Trello / Notion</span>
-                <span class="skill-chip skill-chip--primary">Capcut</span>
-              </div>
-            </div>
-            <!-- Soft Skills -->
-            <div class="home-skills__col">
-              <div class="home-skills__col-label">Kỹ năng mềm</div>
-              <div class="home-skills__tags">
-                <span class="skill-chip">Tư duy phản biện</span>
-                <span class="skill-chip">Làm việc nhóm</span>
-                <span class="skill-chip">Quản lý thời gian</span>
-                <span class="skill-chip">Giao tiếp số</span>
-                <span class="skill-chip">Tìm kiếm thông tin</span>
-                <span class="skill-chip">Sáng tạo nội dung</span>
-              </div>
-            </div>
-            <!-- Currently Learning -->
-            <div class="home-skills__col">
-              <div class="home-skills__col-label">Đang học thêm</div>
-              <div class="home-skills__tags">
-                <span class="skill-chip skill-chip--outline">Digital Marketing</span>
-                <span class="skill-chip skill-chip--outline">Data Analytics</span>
-                <span class="skill-chip skill-chip--outline">Thương mại điện tử</span>
-                <span class="skill-chip skill-chip--outline">AI Prompting</span>
-              </div>
-            </div>
+        <!-- Row 1 — Digital Tools (scroll left) -->
+        <div class="skills-ticker" aria-hidden="true">
+          <div class="skills-ticker__track skills-ticker__track--left">
+            <span class="skill-chip skill-chip--primary">Microsoft Office</span>
+            <span class="skill-chip skill-chip--primary">Google Workspace</span>
+            <span class="skill-chip skill-chip--primary">Canva</span>
+            <span class="skill-chip skill-chip--primary">ChatGPT / Gemini</span>
+            <span class="skill-chip skill-chip--primary">Trello / Notion</span>
+            <span class="skill-chip skill-chip--primary">CapCut</span>
+            <span class="skill-chip skill-chip--primary">PowerPoint</span>
+            <span class="skill-chip skill-chip--primary">Google Sheets</span>
+            <!-- duplicate for seamless loop -->
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">Microsoft Office</span>
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">Google Workspace</span>
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">Canva</span>
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">ChatGPT / Gemini</span>
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">Trello / Notion</span>
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">CapCut</span>
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">PowerPoint</span>
+            <span class="skill-chip skill-chip--primary" aria-hidden="true">Google Sheets</span>
           </div>
+        </div>
+
+        <!-- Row 2 — Soft Skills (scroll right) -->
+        <div class="skills-ticker" aria-hidden="true">
+          <div class="skills-ticker__track skills-ticker__track--right">
+            <span class="skill-chip">Tư duy phản biện</span>
+            <span class="skill-chip">Làm việc nhóm</span>
+            <span class="skill-chip">Quản lý thời gian</span>
+            <span class="skill-chip">Giao tiếp chuyên nghiệp</span>
+            <span class="skill-chip">Sáng tạo nội dung</span>
+            <span class="skill-chip">Khai thác thông tin</span>
+            <span class="skill-chip">Thuyết trình</span>
+            <span class="skill-chip">Tự học liên tục</span>
+            <!-- duplicate -->
+            <span class="skill-chip" aria-hidden="true">Tư duy phản biện</span>
+            <span class="skill-chip" aria-hidden="true">Làm việc nhóm</span>
+            <span class="skill-chip" aria-hidden="true">Quản lý thời gian</span>
+            <span class="skill-chip" aria-hidden="true">Giao tiếp chuyên nghiệp</span>
+            <span class="skill-chip" aria-hidden="true">Sáng tạo nội dung</span>
+            <span class="skill-chip" aria-hidden="true">Khai thác thông tin</span>
+            <span class="skill-chip" aria-hidden="true">Thuyết trình</span>
+            <span class="skill-chip" aria-hidden="true">Tự học liên tục</span>
+          </div>
+        </div>
+
+        <!-- Row 3 — Currently Learning (scroll left, gold) -->
+        <div class="skills-ticker" aria-hidden="true">
+          <div class="skills-ticker__track skills-ticker__track--left" style="animation-duration: 28s;">
+            <span class="skill-chip skill-chip--outline">Digital Marketing</span>
+            <span class="skill-chip skill-chip--outline">Data Analytics</span>
+            <span class="skill-chip skill-chip--outline">Thương mại điện tử</span>
+            <span class="skill-chip skill-chip--outline">AI Prompting</span>
+            <span class="skill-chip skill-chip--outline">Content Strategy</span>
+            <span class="skill-chip skill-chip--outline">SEO / SEM</span>
+            <!-- duplicate -->
+            <span class="skill-chip skill-chip--outline" aria-hidden="true">Digital Marketing</span>
+            <span class="skill-chip skill-chip--outline" aria-hidden="true">Data Analytics</span>
+            <span class="skill-chip skill-chip--outline" aria-hidden="true">Thương mại điện tử</span>
+            <span class="skill-chip skill-chip--outline" aria-hidden="true">AI Prompting</span>
+            <span class="skill-chip skill-chip--outline" aria-hidden="true">Content Strategy</span>
+            <span class="skill-chip skill-chip--outline" aria-hidden="true">SEO / SEM</span>
+          </div>
+        </div>
+
+        <div class="home-skills__legend">
+          <span class="home-skills__legend-item"><span class="legend-dot legend-dot--filled"></span> Đã thành thạo</span>
+          <span class="home-skills__legend-item"><span class="legend-dot legend-dot--plain"></span> Kỹ năng mềm</span>
+          <span class="home-skills__legend-item"><span class="legend-dot legend-dot--gold"></span> Đang phát triển</span>
         </div>
       </section><!-- /home-skills -->
 
