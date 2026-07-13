@@ -708,6 +708,224 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 }
 
 /* ============================================================
+   HOME NAV PREVIEW SECTION
+   ============================================================ */
+.home-nav {
+  background: var(--cream);
+  padding: clamp(80px, 12vh, 140px) clamp(20px, 6vw, 100px);
+  border-top: 1px solid var(--cream-border);
+}
+
+.home-nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-nav__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  opacity: 0.5;
+  margin-bottom: 56px;
+}
+
+.home-nav__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  display: inline-block;
+}
+
+/* Two-column grid with vertical divider */
+.home-nav__grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+
+.home-nav__divider {
+  background: var(--cream-border);
+  height: 100%;
+  min-height: 380px;
+}
+
+/* Individual Card */
+.home-nav__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.home-nav__card-top {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.home-nav__card-num {
+  font-family: var(--font-serif);
+  font-size: clamp(56px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--burgundy);
+  opacity: 0.12;
+  letter-spacing: -0.03em;
+}
+
+.home-nav__card-tag {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  opacity: 0.5;
+  padding: 4px 12px;
+  border: 1px solid var(--cream-border);
+  border-radius: 100px;
+}
+
+.home-nav__card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--burgundy);
+  margin-bottom: 24px;
+}
+
+.home-nav__card-title em {
+  font-style: italic;
+  color: var(--burgundy);
+  opacity: 0.65;
+}
+
+.home-nav__card-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.75;
+  color: var(--burgundy);
+  opacity: 0.65;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+
+/* Keyword tag list */
+.home-nav__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+}
+
+.home-nav__card-tags li {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--burgundy);
+  opacity: 0.55;
+  padding: 5px 14px;
+  border: 1px solid rgba(90, 0, 0, 0.18);
+  border-radius: 100px;
+}
+
+/* CTA Button — same pill style as project blocks but in Burgundy */
+.home-nav__card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  background: transparent;
+  border: 1.5px solid rgba(90, 0, 0, 0.4);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.home-nav__card-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--burgundy);
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.home-nav__card-cta:hover::before {
+  transform: translateX(0);
+}
+
+.home-nav__card-cta:hover {
+  color: var(--cream);
+  border-color: var(--burgundy);
+}
+
+.home-nav__card-cta span,
+.home-nav__card-cta-arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.home-nav__card-cta-arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  display: inline-flex;
+}
+
+.home-nav__card-cta:hover .home-nav__card-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-nav__grid {
+    grid-template-columns: 1fr;
+    gap: 56px 0;
+  }
+
+  .home-nav__divider {
+    display: none;
+  }
+
+  .home-nav__card {
+    border-bottom: 1px solid var(--cream-border);
+    padding-bottom: 56px;
+  }
+
+  .home-nav__card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+/* ============================================================
    PROJECTS SECTION
    ============================================================ */
 .projects-section {

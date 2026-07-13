@@ -738,6 +738,21 @@ function initScrollAnimations() {
       }
     });
   }
+
+  // Home nav preview cards — staggered fade in
+  document.querySelectorAll('.home-nav__card').forEach((card, i) => {
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      delay: i * 0.15,
+      scrollTrigger: {
+        trigger: '.home-nav__grid',
+        start: 'top 85%',
+      }
+    });
+  });
 }
 
 // ──────────────────────────────────────────────────────────────
@@ -1057,6 +1072,14 @@ function initNavigation() {
   if (backBtn) {
     backBtn.addEventListener('click', () => navigateTo('projects'));
   }
+
+  // Home nav preview cards CTA buttons
+  document.querySelectorAll('.home-nav__card-cta').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      if (target) navigateTo(target);
+    });
+  });
 }
 
 function navigateTo(route) {
