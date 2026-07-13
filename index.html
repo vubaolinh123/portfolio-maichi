@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vũ Bảo Linh — Portfolio 2026</title>
+  <meta name="description" content="Portfolio cá nhân của Vũ Bảo Linh — Sinh viên FPT Polytechnic 2026. Thể hiện các kỹ năng số đã học và lưu trữ sản phẩm cá nhân." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- Splitting.js -->
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+  <!-- marked.js -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-left">
+      <span class="header-label">ĐH KINH TẾ - ĐHQGHN</span>
+      <span class="header-sep">|</span>
+      <span class="header-label">2026</span>
+      <span class="header-sep">|</span>
+      <span class="header-label">PORTFOLIO</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#home" class="nav-link" data-section="home" id="nav-home">Giới thiệu</a>
+      <a href="#projects" class="nav-link" data-section="projects" id="nav-projects">Dự án</a>
+      <a href="#reflections" class="nav-link" data-section="reflections" id="nav-reflections">Tổng kết</a>
+    </nav>
+  </header>
+
+  <!-- Side Dot Navigator -->
+  <div class="dot-nav" id="dot-nav">
+    <button class="dot-nav__item active" data-target="home" title="Giới thiệu" id="dot-home"></button>
+    <button class="dot-nav__item" data-target="projects" title="Dự án" id="dot-projects"></button>
+    <button class="dot-nav__item" data-target="reflections" title="Tổng kết" id="dot-reflections"></button>
+  </div>
+
+  <!-- Main SPA Container -->
+  <main id="app">
+
+    <!-- ============================================================
+         VIEW: HOME (Hero + About)
+         ============================================================ -->
+    <div class="view" id="view-home">
+
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero__bg-text" aria-hidden="true">Portfolio 2026</div>
+        <div class="hero__content">
+          <!-- Left Column: Typography & Pills -->
+          <div class="hero__col-left">
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__title-line hero__title-line--first" data-splitting>Nguyễn</span>
+              <span class="hero__title-line hero__title-line--main" data-splitting>Mai</span>
+              <span class="hero__title-line hero__title-line--sub italic" data-splitting>Chi</span>
+            </h1>
+            <div class="hero__meta">
+              <span class="hero__pill">Sinh viên Quản trị Kinh doanh</span>
+              <span class="hero__pill">ĐH Kinh tế — ĐHQGHN</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Manifesto Counterweight -->
+          <div class="hero__col-right">
+            <div class="hero__manifesto">
+              <p>Tư duy hệ thống kết hợp với góc nhìn sáng tạo định hình cách tôi tiếp cận mọi thử thách kinh doanh trong thời đại số. Đây là không gian lưu trữ và thể hiện những hành trình thực tiễn đó.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="hero__scroll-cta" id="hero-scroll-cta" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
+          <span>Khám phá</span>
+          <i class="ph ph-arrow-right"></i>
+        </button>
+        <div class="hero__year" aria-hidden="true">2026</div>
+      </section>
+
+
+      <!-- About Section -->
+      <section class="about" id="about">
+        <div class="about__inner">
+          <!-- Left Column: Text -->
+          <div class="about__text-col">
+            <div class="about__eyebrow">
+              <span class="about__dot"></span>
+              <span>Giới thiệu bản thân</span>
+            </div>
+            <h2 class="about__title" data-splitting>About<br/><span class="italic">Me</span></h2>
+            <div class="about__intro">
+              <p class="about__lead">
+                Xin chào, tôi là <strong>Nguyễn Mai Chi</strong> — sinh viên năm nhất ngành Quản trị Kinh doanh tại Trường Đại học Kinh tế, Đại học Quốc gia Hà Nội. Tôi đam mê khám phá giao điểm giữa kinh doanh và công nghệ số — nơi sự sáng tạo gặp gỡ tư duy chiến lược.
+              </p>
+              <p class="about__body">
+                Ngoài giờ học, tôi thích đọc sách về kinh doanh và tâm lý học, khám phá âm nhạc và du lịch. Những sở thích này giúp tôi nuôi dưỡng tư duy đa chiều và khả năng hiểu con người — yếu tố cốt lõi trong quản trị.
+              </p>
+            </div>
+
+            <div class="about__goals">
+              <div class="about__goals-title">Mục tiêu &amp; Định hướng</div>
+              <div class="about__goals-grid">
+                <div class="about__goal-item">
+                  <span class="about__goal-num">01</span>
+                  <p class="about__goal-text">Trở thành chuyên gia trong lĩnh vực Digital Marketing và Thương mại điện tử</p>
+                </div>
+                <div class="about__goal-item">
+                  <span class="about__goal-num">02</span>
+                  <p class="about__goal-text">Xây dựng nền tảng kiến thức quản trị kết hợp với năng lực số để dẫn dắt doanh nghiệp hiện đại</p>
+                </div>
+                <div class="about__goal-item">
+                  <span class="about__goal-num">03</span>
+                  <p class="about__goal-text">Học hỏi liên tục và tham gia các dự án kinh doanh thực tế ngay từ khi còn ngồi trên ghế nhà trường</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Image + Portfolio Goal -->
+          <div class="about__image-col">
+            <div class="about__image-frame">
+              <div class="about__image-accent" aria-hidden="true"></div>
+              <img src="assets/images/portrait.png" alt="Chân dung Nguyễn Mai Chi" class="about__portrait" id="about-portrait" />
+              <div class="about__image-label">
+                <span>Nguyễn Mai Chi</span>
+                <span class="light">2026</span>
+              </div>
+            </div>
+            <div class="about__portfolio-goal">
+              <div class="about__portfolio-goal-label">Mục tiêu Portfolio</div>
+              <blockquote class="about__portfolio-quote">
+                &ldquo;Lưu trữ các sản phẩm học tập, thể hiện các kỹ năng số đã tích lũy và ghi lại hành trình trưởng thành trong môi trường số hóa.&rdquo;
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Transition CTA -->
+        <div class="section-cta">
+          <a href="#projects" class="section-cta__link" id="goto-projects">
+            <span>Xem dự án</span>
+            <div class="section-cta__arrow"><i class="ph ph-arrow-right"></i></div>
+          </a>
+        </div>
+      </section>
+
+    </div><!-- /view-home -->
+
+
+    <!-- ============================================================
+         VIEW: PROJECTS LIST
+         ============================================================ -->
+    <div class="view hidden" id="view-projects">
+      <section class="projects-section" id="projects">
+        <div class="projects__header">
+          <div class="projects__header-top">
+            <span class="projects__eyebrow">— ARCHIVE</span>
+            <span class="projects__count">06 bài tập</span>
+          </div>
+          <h1 class="projects__main-title" id="projects-title">Digital<br/><em>Projects</em></h1>
+        </div>
+
+        <div class="projects__grid" id="projects-grid">
+          <!-- Cards injected by JS -->
+        </div>
+      </section>
+    </div><!-- /view-projects -->
+
+
+    <!-- ============================================================
+         VIEW: PROJECT DETAIL
+         ============================================================ -->
+    <div class="view hidden" id="view-detail">
+      <section class="detail-section" id="project-detail">
+        <div class="detail__back-bar">
+          <button class="detail__back-btn" id="back-btn">
+            <i class="ph ph-arrow-left"></i>
+            <span>Quay lại Dự án</span>
+          </button>
+          <div class="detail__breadcrumb" id="detail-breadcrumb">Dự án / —</div>
+        </div>
+
+        <div class="detail__hero">
+          <div class="detail__meta">
+            <span class="pill pill--cream" id="detail-pill">BÀI TẬP 0X</span>
+          </div>
+          <h1 class="detail__title" id="detail-title">Loading…</h1>
+          <div class="detail__thumb-wrap" id="detail-thumb-wrap">
+            <img src="" alt="" class="detail__thumb" id="detail-thumb" />
+          </div>
+        </div>
+
+        <div class="detail__content-wrap">
+          <div class="markdown-content" id="markdown-content">
+            <div class="detail__loading" id="detail-loading">
+              <div class="detail__loading-dot"></div>
+              <div class="detail__loading-dot"></div>
+              <div class="detail__loading-dot"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div><!-- /view-detail -->
+
+
+    <!-- ============================================================
+         VIEW: REFLECTIONS
+         ============================================================ -->
+    <div class="view hidden" id="view-reflections">
+      <section class="reflections-section" id="reflections">
+        <div class="reflections__header">
+          <span class="reflections__eyebrow">— TỔNG KẾT</span>
+          <h1 class="reflections__title" data-splitting>Reflections</h1>
+        </div>
+
+        <div class="reflections__body">
+
+          <!-- 01 -->
+          <div class="reflection-block" id="ref-01">
+            <div class="reflection-block__num">01</div>
+            <div class="reflection-block__content">
+              <h2 class="reflection-block__heading">Trải nghiệm cá nhân</h2>
+              <p class="reflection-block__text">
+                Hành trình xây dựng portfolio này là một trong những trải nghiệm ý nghĩa nhất trong năm học đầu tiên của tôi tại Đại học Kinh tế - ĐHQGHN. Không đơn giản là một bài tập, đây là lần đầu tiên tôi phải tự thiết kế, tổ chức và thể hiện bản thân một cách đầy đủ và hệ thống.
+              </p>
+              <p class="reflection-block__text">
+                Là sinh viên quản trị kinh doanh, tôi nhận ra rằng kỹ năng số không hề “xa lạ” với ngành học của mình — ngược lại, đây chính là nền tảng cần thiết để vận hành doanh nghiệp trong thời đại số. Mỗi bài học từ kỹ năng số đều có ứng dụng thực tế trong quản trị, marketing và chiến lược kinh doanh.
+              </p>
+            </div>
+          </div>
+
+          <div class="reflections__divider" aria-hidden="true"></div>
+
+          <!-- 02 -->
+          <div class="reflection-block" id="ref-02">
+            <div class="reflection-block__num">02</div>
+            <div class="reflection-block__content">
+              <h2 class="reflection-block__heading">Kiến thức &amp; Kỹ năng</h2>
+              <div class="skills-list">
+                <div class="skills-list__item">
+                  <div class="skills-list__label">Thành thạo công cụ số</div>
+                  <p>Nắm vững và sử dụng tốt các thiết bị, phần mềm văn phòng và công cụ số phục vụ học tập và làm việc hiệu quả.</p>
+                </div>
+                <div class="skills-list__item">
+                  <div class="skills-list__label">Kỹ năng khai thác thông tin</div>
+                  <p>Biết cách tìm kiếm, đánh giá và tổ chức thông tin số một cách có phương pháp — rất cần thiết cho nghiên cứu thị trường và phân tích kinh doanh.</p>
+                </div>
+                <div class="skills-list__item">
+                  <div class="skills-list__label">Tư duy về AI trong kinh doanh</div>
+                  <p>Hiểu cách AI đang thay đổi mô hình kinh doanh, từ tự động hóa quy trình đến cá nhân hóa trải nghiệm khách hàng và phân tích dữ liệu lớn.</p>
+                </div>
+                <div class="skills-list__item">
+                  <div class="skills-list__label">Hợp tác và giao tiếp số</div>
+                  <p>Thành thạo Google Workspace, Microsoft 365 và các nền tảng làm việc nhóm. Giao tiếp chuyên nghiệp qua email, video call và các kênh số.</p>
+                </div>
+                <div class="skills-list__item">
+                  <div class="skills-list__label">Sáng tạo nội dung số</div>
+                  <p>Có khả năng lên kế hoạch và sản xuất nội dung số đa dạng — phục vụ marketing, trưng bày báo cáo và xây dựng thương hiệu cá nhân.</p>
+                </div>
+                <div class="skills-list__item">
+                  <div class="skills-list__label">An toàn &amp; Liêm chính Học thuật</div>
+                  <p>Nhận thức rõ về bảo mật thông tin, quyền riêng tư số và có thái độ sử dụng AI có đạo đức trong học tập.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reflections__divider" aria-hidden="true"></div>
+
+          <!-- 03 -->
+          <div class="reflection-block" id="ref-03">
+            <div class="reflection-block__num">03</div>
+            <div class="reflection-block__content">
+              <h2 class="reflection-block__heading">Điểm tâm đắc &amp; Thách thức</h2>
+              <div class="dual-col">
+                <div class="dual-col__item highlight-col">
+                  <div class="dual-col__label">
+                    <i class="ph ph-star"></i>
+                    Tâm đắc nhất
+                  </div>
+                  <ul class="dual-col__list">
+                    <li>Nhận ra kỹ năng số là ‘công cụ then chốt’ cho người làm kinh doanh tương lai</li>
+                    <li>Biết cách đánh giá AI có phê phán và sử dụng đúng mục đích trong học tập</li>
+                    <li>Xây dựng được portfolio cá nhân hoàn chỉnh lần đầu tiên</li>
+                    <li>Phát triển thói quen kiểm chứng thông tin và bảo vệ danh tính số</li>
+                  </ul>
+                </div>
+                <div class="dual-col__item challenge-col">
+                  <div class="dual-col__label">
+                    <i class="ph ph-lightning"></i>
+                    Thách thức
+                  </div>
+                  <ul class="dual-col__list">
+                    <li>Cân bằng giữa nhiều môn học khác nhau trong kì học đầu tiên</li>
+                    <li>Tốc độ thay đổi công nghệ quá nhanh — khó theo kịp tất cả</li>
+                    <li>Biết cách trình bày ý tưởng rõ ràng và chuyên nghiệp bằng văn viết</li>
+                    <li>Vượt qua tâm lý nghĩ kỹ năng số chỉ dành cho người học IT</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /reflections__body -->
+
+        <!-- Closing -->
+        <div class="reflections__end">
+          <div class="three-dots">
+            <span class="three-dots__dot"></span>
+            <span class="three-dots__dot"></span>
+            <span class="three-dots__dot"></span>
+          </div>
+          <p class="reflections__end-text">Cảm ơn bạn đã ghé thăm portfolio của tôi.</p>
+        </div>
+
+      </section>
+    </div><!-- /view-reflections -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer__left">
+      <span>&copy; 2026 Nguyễn Mai Chi</span>
+    </div>
+    <div class="footer__center">
+      <span class="three-dots three-dots--sm">
+        <span class="three-dots__dot"></span>
+        <span class="three-dots__dot"></span>
+        <span class="three-dots__dot"></span>
+      </span>
+    </div>
+    <div class="footer__right">
+      <span>ĐH Kinh tế - ĐHQGHN</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
