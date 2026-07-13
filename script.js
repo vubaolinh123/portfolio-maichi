@@ -741,9 +741,9 @@ function initScrollAnimations() {
 
   // Home nav preview cards — staggered fade in
   document.querySelectorAll('.home-nav__card').forEach((card, i) => {
-    gsap.to(card, {
-      opacity: 1,
-      y: 0,
+    gsap.from(card, {
+      opacity: 0,
+      y: 30,
       duration: 0.8,
       ease: 'power3.out',
       delay: i * 0.15,
@@ -1080,6 +1080,40 @@ function initNavigation() {
       if (target) navigateTo(target);
     });
   });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (backToTopBtn) {
+    // Show/hide based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    // Also listen to Lenis scroll for SPA views
+    if (lenis) {
+      lenis.on('scroll', ({ scroll }) => {
+        if (scroll > 400) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+    }
+
+    backToTopBtn.addEventListener('click', () => {
+      // Scroll the active view container to top
+      const activeView = document.querySelector('.view:not(.hidden)');
+      if (activeView) {
+        activeView.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+    });
+  }
 }
 
 function navigateTo(route) {
