@@ -83,11 +83,459 @@ const PROJECTS = [
   },
 ];
 
+// ──────────────────────────────────────────────────────────────
+// INLINE CONTENT MAP — avoids HTTP fetch (works on GitHub Pages)
+// ──────────────────────────────────────────────────────────────
+const CONTENT_MAP = {
+  'bai-1': `## Mục tiêu bài tập
+
+Với tư cách là sinh viên Quản trị Kinh doanh, bài tập này giúp tôi **hiểu rõ nền tảng phần cứng máy tính** — điều kiện tiên quyết để sử dụng hiệu quả các công cụ số phục vụ học tập và công việc. Mục tiêu cụ thể:
+
+- Nắm được cấu trúc cơ bản của máy tính và vai trò từng thành phần
+- Phân biệt và lựa chọn thiết bị ngoại vi phù hợp với từng nhu cầu công việc văn phòng
+- Hiểu cách các thiết bị ảnh hưởng đến năng suất làm việc
+- Biết cách bảo trì và sử dụng thiết bị bền lâu, tiết kiệm chi phí
+
+---
+
+## Quá trình thực hiện
+
+### 1. Tìm hiểu cấu trúc máy tính
+
+Tôi bắt đầu bằng cách tìm hiểu các thành phần chính của một máy tính cá nhân, nhìn từ góc độ người dùng trong kinh doanh:
+
+| Thành phần | Chức năng | Ảnh hưởng đến công việc |
+|------------|-----------|------------------------|
+| **CPU** | Xử lý mọi tính toán | Quyết định tốc độ mở phần mềm, xử lý báo cáo |
+| **RAM** | Bộ nhớ tạm thời | Xác định số lượng tab/ứng dụng mở cùng lúc |
+| **SSD** | Lưu trữ dữ liệu | Tốc độ khởi động và truy cập file |
+| **Màn hình** | Hiển thị | Độ phân giải ảnh hưởng chất lượng thuyết trình |
+| **Pin (laptop)** | Nguồn điện | Thời gian làm việc di động |
+
+### 2. Phân loại thiết bị ngoại vi theo nhu cầu văn phòng
+
+Thay vì liệt kê tất cả thiết bị, tôi tập trung vào những gì thực sự cần thiết cho sinh viên kinh doanh:
+
+**Nhóm thiết bị nhập liệu cần thiết:**
+- **Bàn phím cơ học** — gõ văn bản nhanh, phù hợp viết báo cáo dài
+- **Chuột không dây** — linh hoạt trong thuyết trình, làm việc di động
+- **Bút cảm ứng + máy tính bảng** — ghi chú trong cuộc họp, ký hợp đồng số
+
+**Nhóm thiết bị xuất cần thiết:**
+- **Màn hình ngoài** — mở rộng không gian làm việc, tăng năng suất đến 40%
+- **Máy chiếu / màn hình thuyết trình** — cần thiết cho báo cáo trực tiếp
+- **Tai nghe chống ồn** — làm việc tập trung, họp online chất lượng cao
+
+**Thiết bị lưu trữ dự phòng:**
+- **USB 3.0 / SSD di động** — chia sẻ file lớn nhanh chóng
+- **Cloud storage** (Google Drive, OneDrive) — truy cập từ mọi nơi, an toàn hơn
+
+### 3. Bài học ứng dụng: Chọn máy tính cho sinh viên kinh doanh
+
+Sau khi nghiên cứu, tôi tổng hợp được tiêu chí chọn laptop phù hợp cho sinh viên quản trị:
+
+1. **Pin** ≥ 8 tiếng thực tế → làm việc cả ngày không lo sạc
+2. **RAM** ≥ 16GB → chạy đồng thời Excel, PowerPoint, Chrome nhiều tab
+3. **SSD** ≥ 512GB → lưu trữ đủ tài liệu, presentation, video khóa học
+4. **Trọng lượng** ≤ 1.5kg → dễ mang đến lớp, thư viện, gặp khách hàng
+5. **Màn hình** 14-15.6 inch, IPS → màu sắc chính xác khi thiết kế tài liệu
+
+> "Máy tính là công cụ kiếm sống. Hiểu nó để đầu tư đúng — không phải mua đắt nhất, mà mua phù hợp nhất với công việc của mình."
+
+---
+
+## Sản phẩm đính kèm
+
+- 📄 [Báo cáo - BaoCao\\_Bai1\\_MayTinh.pdf](#) *(Đang cập nhật)*
+- 📊 [Bảng so sánh thiết bị văn phòng - SoSanh\\_ThietBi.xlsx](#) *(Đang cập nhật)*
+`,
+
+  'bai-2': `## Mục tiêu bài tập
+
+Trong kinh doanh, **thông tin là tài sản**. Người ra quyết định nhanh hơn, chính xác hơn thường là người nắm thông tin tốt hơn. Bài tập này giúp tôi xây dựng kỹ năng khai thác thông tin số một cách hệ thống và có phê phán. Mục tiêu:
+
+- Nắm vững các kỹ thuật tìm kiếm nâng cao để nghiên cứu thị trường hiệu quả
+- Biết đánh giá độ tin cậy của nguồn thông tin — quan trọng khi phân tích ngành
+- Hiểu cách tổ chức và quản lý thông tin thu thập được
+- Ứng dụng vào bài toán thực tế: phân tích một xu hướng kinh doanh
+
+---
+
+## Quá trình thực hiện
+
+### 1. Tại sao thông tin quan trọng với người học kinh doanh?
+
+Trước đây tôi nghĩ Google là đủ. Nhưng sau bài học này, tôi nhận ra sự khác biệt cơ bản:
+
+| | Người tìm kiếm thông thường | Người tìm kiếm có kỹ năng |
+|--|--|--|
+| **Kết quả** | Top 10 trang phổ biến nhất | Đúng nguồn cần thiết, kể cả học thuật |
+| **Độ tin cậy** | Chưa kiểm chứng | Đã đánh giá tác giả, ngày đăng, mục đích |
+| **Tốc độ** | Nhiều thời gian lọc nhiễu | Tìm đúng ngay từ đầu |
+| **Ứng dụng** | Đọc xong bỏ đó | Lưu trữ có hệ thống, dễ trích dẫn |
+
+### 2. Kỹ thuật tìm kiếm nâng cao cho nghiên cứu kinh doanh
+
+Tôi đã thực hành các operator chuyên dụng trên Google:
+
+\`\`\`
+"Thương mại điện tử Việt Nam 2024" → tìm cụm từ chính xác
+site:gso.gov.vn doanh thu bán lẻ  → dữ liệu từ Tổng cục Thống kê
+filetype:pdf báo cáo thị trường F&B → tải báo cáo ngành
+"digital marketing" -facebook -tiktok → loại bỏ platform cụ thể
+after:2023-01-01 e-commerce trends  → chỉ lấy thông tin mới nhất
+\`\`\`
+
+**Ngoài Google, tôi còn khám phá:**
+- **Google Scholar** — bài báo học thuật về kinh tế, quản trị
+- **Statista** — số liệu thị trường toàn cầu
+- **Nielsen, Kantar** — báo cáo hành vi người tiêu dùng
+- **VCCI, VECOM** — số liệu kinh doanh tại Việt Nam
+
+### 3. Đánh giá nguồn thông tin bằng SIFT Method
+
+Tôi học được phương pháp **SIFT** (cập nhật hơn CRAAP Test) để đánh giá nhanh nguồn tin:
+
+- **S — Stop** (Dừng lại): Trước khi đọc, hỏi bản thân "Tôi có biết gì về nguồn này?"
+- **I — Investigate the source** (Điều tra nguồn): Tìm thông tin về tổ chức/tác giả
+- **F — Find better coverage** (Tìm nguồn tốt hơn): So sánh với nhiều nguồn khác
+- **T — Trace claims** (Truy xuất nguồn gốc): Kiểm tra tuyên bố có dữ liệu gốc không
+
+### 4. Thực hành: Phân tích xu hướng Digital Marketing tại Việt Nam
+
+Tôi áp dụng kỹ năng vào nghiên cứu một chủ đề kinh doanh thực tế. Kết quả tóm tắt:
+
+**Nguồn đáng tin cậy tìm được:**
+- Báo cáo "Vietnam Digital Marketing 2024" — Adsota & Nielsen
+- Số liệu Tổng cục Thống kê về thương mại điện tử
+- Bài nghiên cứu từ tạp chí Journal of Business Research
+
+**Kết quả phân tích ngắn:**
+> Thị trường digital marketing Việt Nam tăng trưởng 18%/năm (2022-2024). Video short-form (TikTok, Reels) đang chiếm 67% ngân sách quảng cáo số của doanh nghiệp vừa và nhỏ.
+
+> "Trong kinh doanh, người có thông tin tốt hơn sẽ ra quyết định tốt hơn. Kỹ năng khai thác thông tin chính là lợi thế cạnh tranh vô hình."
+
+---
+
+## Sản phẩm đính kèm
+
+- 📄 [Báo cáo - BaoCao\\_Bai2\\_KhaiThacTT.pdf](#) *(Đang cập nhật)*
+- 📋 [Bảng đánh giá nguồn thông tin - SIFT\\_Checklist.pdf](#) *(Đang cập nhật)*
+- 📊 [Mini Research: Digital Marketing VN 2024 - Research\\_DMK.pdf](#) *(Đang cập nhật)*
+`,
+
+  'bai-3': `## Mục tiêu bài tập
+
+AI không còn là chuyện của tương lai — nó đang thay đổi từng ngành kinh doanh ngay lúc này. Bài tập này giúp tôi **hiểu AI từ góc nhìn của người quản trị kinh doanh** — không phải để lập trình, mà để chiến lược và ra quyết định thông minh hơn. Mục tiêu:
+
+- Hiểu các khái niệm AI cốt lõi mà nhà quản trị cần biết
+- Phân tích cách AI đang disrupting (gián đoạn) từng ngành kinh doanh
+- Nhận biết cơ hội và rủi ro của AI với người học kinh doanh
+- Hình thành quan điểm về cách ứng dụng AI có trách nhiệm
+
+---
+
+## Quá trình thực hiện
+
+### 1. AI nhìn từ góc độ kinh doanh
+
+Tôi không cần biết AI hoạt động như thế nào về mặt kỹ thuật — điều quan trọng hơn là hiểu **AI có thể làm gì cho doanh nghiệp**:
+
+\`\`\`
+Artificial Intelligence (AI) ứng dụng trong kinh doanh
+├── Tự động hóa (Automation)
+│   ├── RPA — tự động nhập liệu, xử lý hóa đơn
+│   └── Chatbot — chăm sóc khách hàng 24/7
+├── Phân tích & Dự báo (Analytics)
+│   ├── Phân tích hành vi khách hàng
+│   ├── Dự báo nhu cầu tồn kho
+│   └── Credit scoring trong tài chính
+├── Cá nhân hóa (Personalization)
+│   ├── Recommendation engine (Netflix, Shopee, Tiki)
+│   └── Dynamic pricing (Grab, khách sạn, hàng không)
+└── Sáng tạo (Generative AI)
+    ├── Tạo nội dung marketing (GPT-4, Claude)
+    ├── Thiết kế hình ảnh (Midjourney, DALL-E)
+    └── Phân tích hợp đồng, tài liệu pháp lý
+\`\`\`
+
+### 2. AI đang thay đổi các ngành kinh doanh như thế nào?
+
+| Ngành | AI đang làm gì | Cơ hội cho người quản trị |
+|-------|---------------|--------------------------|
+| **Bán lẻ** | Phân tích giỏ hàng, dự báo xu hướng | Tối ưu assortment, pricing strategy |
+| **Marketing** | Tạo content, target audience chính xác | Giảm chi phí/lead, tăng conversion |
+| **Tài chính** | Phát hiện gian lận, phân tích rủi ro | Quyết định cho vay nhanh hơn, an toàn hơn |
+| **HR** | Sàng lọc CV, phân tích hiệu suất | Tuyển dụng hiệu quả, giảm thiên kiến |
+| **Supply Chain** | Dự báo nhu cầu, tối ưu logistics | Giảm tồn kho dư, tiết kiệm chi phí |
+
+### 3. Thực hành: Dùng AI trong học tập kinh doanh
+
+Tôi đã thực hành sử dụng ChatGPT và Gemini cho các task học tập thực tế:
+
+**Task 1: Phân tích SWOT bằng AI**
+Tôi yêu cầu AI phân tích SWOT cho một mô hình kinh doanh cụ thể, sau đó tự verify và bổ sung. Nhận xét: AI cho framework tốt, nhưng thiếu insight thị trường địa phương → cần kết hợp với nghiên cứu thực tế.
+
+**Task 2: Viết Executive Summary**
+AI tạo bản nháp trong 30 giây. Tôi mất 15 phút tinh chỉnh để phù hợp ngữ cảnh. Tổng thời gian: 20 phút thay vì 1.5 giờ.
+
+**Task 3: Tóm tắt báo cáo dài**
+Upload PDF báo cáo 40 trang, yêu cầu AI tóm tắt 5 điểm chính. Kết quả chính xác 80%, cần đọc lại để kiểm tra.
+
+### 4. Góc nhìn về tương lai: AI và nghề nghiệp
+
+**Công việc quản trị kinh doanh nào sẽ thay đổi:**
+- Phân tích dữ liệu cơ bản → AI làm tốt hơn
+- Viết báo cáo template → AI hỗ trợ đáng kể
+- Chăm sóc khách hàng cơ bản → Chatbot xử lý
+
+**Công việc nào con người vẫn không thể thay thế:**
+- Xây dựng quan hệ và đàm phán → cần EQ cao
+- Quyết định chiến lược trong tình huống không chắc chắn
+- Lãnh đạo và truyền cảm hứng cho đội nhóm
+- Sáng tạo giải pháp kinh doanh chưa từng có
+
+> "Không phải AI thay thế nhà quản trị — AI thay thế nhà quản trị không biết dùng AI. Thế hệ chúng tôi phải trở thành người *cộng tác với AI* chứ không phải *cạnh tranh với AI*."
+
+---
+
+## Sản phẩm đính kèm
+
+- 📄 [Báo cáo - BaoCao\\_Bai3\\_TongQuanAI.pdf](#) *(Đang cập nhật)*
+- 🗺️ [Mind map AI trong kinh doanh - MindMap\\_AI\\_Kinh\\_Doanh.pdf](#) *(Đang cập nhật)*
+- 📊 [Slide thuyết trình - Slide\\_AI\\_Business.pptx](#) *(Đang cập nhật)*
+`,
+
+  'bai-4': `## Mục tiêu bài tập
+
+Kỹ năng giao tiếp và hợp tác là **năng lực số 1 mà nhà tuyển dụng tìm kiếm** ở sinh viên mới ra trường. Trong thời đại hybrid work, kỹ năng này đòi hỏi phải thành thạo cả môi trường số lẫn trực tiếp. Mục tiêu:
+
+- Thành thạo các công cụ cộng tác số phổ biến nhất trong môi trường doanh nghiệp
+- Nắm vững nguyên tắc giao tiếp chuyên nghiệp qua email, video call
+- Biết quản lý dự án nhóm hiệu quả trong môi trường phân tán
+- Xây dựng digital presence chuyên nghiệp phù hợp với ngành kinh doanh
+
+---
+
+## Quá trình thực hiện
+
+### 1. Bản đồ công cụ cộng tác số trong doanh nghiệp
+
+**Communication (Giao tiếp):**
+- **Email** — vẫn là kênh chính thức số 1
+- **Slack / Microsoft Teams** — nhắn tin nội bộ, cộng tác dự án
+- **Zalo** — phổ biến tại Việt Nam, cả cá nhân lẫn doanh nghiệp
+
+**Video Meetings:**
+- **Google Meet** — phổ biến, miễn phí, tích hợp Calendar
+- **Zoom** — chất lượng tốt, nhiều tính năng enterprise
+- **Microsoft Teams** — all-in-one cho doanh nghiệp dùng M365
+
+**Project Management (Quản lý dự án):**
+- **Trello** — Kanban đơn giản, phù hợp nhóm nhỏ
+- **Notion** — workspace linh hoạt nhất: docs + tasks + database
+- **Asana / Monday.com** — dành cho team lớn, nhiều dự án song song
+
+### 2. Thực hành: Dự án nhóm hoàn toàn online
+
+Trong bài tập này, nhóm 4 người của tôi thực hiện một mini case study về phân tích thị trường F&B hoàn toàn trực tuyến.
+
+**Tuần 1 — Kick-off:**
+- Họp trên Google Meet 30 phút → phân công nhiệm vụ rõ ràng
+- Tạo Trello board với cột: Backlog / In Progress / Review / Done
+
+**Tuần 2-3 — Execution:**
+- Cộng tác trên Google Docs (nhiều người edit cùng lúc)
+- Check-in hàng ngày qua nhóm chat Messenger (5 phút/ngày)
+
+**Tuần 4 — Finalization:**
+- Review tổng thể qua Google Meet
+- Trình bày qua Google Slides — share screen live
+
+> Điều khó nhất không phải công việc — mà là duy trì giao tiếp đều đặn khi không gặp mặt trực tiếp.
+
+### 3. Nguyên tắc giao tiếp email chuyên nghiệp
+
+\`\`\`
+Tiêu đề: [Rõ ràng] [Có hành động nếu cần]
+Ví dụ: "Xin ý kiến về đề cương báo cáo — cần phản hồi trước 15/7"
+
+Thân:
+1. Opening: Nêu lý do liên hệ (1-2 câu)
+2. Body: Thông tin chính, dùng bullet points
+3. Ask: Yêu cầu cụ thể (làm gì, deadline khi nào)
+4. Closing: Lịch sự, đề xuất bước tiếp theo
+\`\`\`
+
+**Email đến giảng viên, đối tác:**
+- Luôn dùng kính ngữ phù hợp (Thưa Thầy/Cô, Kính gửi Anh/Chị)
+- Đính kèm file trước khi gửi (kiểm tra lại tên file)
+- Trả lời trong vòng 24 giờ — đây là chuẩn professional
+
+> "Trong kinh doanh, cách bạn giao tiếp quan trọng không kém nội dung bạn truyền đạt."
+
+---
+
+## Sản phẩm đính kèm
+
+- 📄 [Báo cáo - BaoCao\\_Bai4\\_GiaoTiepSo.pdf](#) *(Đang cập nhật)*
+- 📋 [Hướng dẫn email chuyên nghiệp - Email\\_Guide.pdf](#) *(Đang cập nhật)*
+- 🖼️ [Mini Case Study F&B - CaseStudy\\_FnB.pdf](#) *(Đang cập nhật)*
+`,
+
+  'bai-5': `## Mục tiêu bài tập
+
+**Content is King** — câu này đã cũ nhưng chưa bao giờ đúng hơn trong thời đại mạng xã hội. Với sinh viên kinh doanh, khả năng tạo nội dung số là lợi thế cạnh tranh cực lớn. Mục tiêu:
+
+- Hiểu quy trình sản xuất nội dung từ ý tưởng đến xuất bản
+- Thực hành các định dạng: bài viết, infographic, video ngắn
+- Ứng dụng tư duy marketing vào nội dung số
+- Học cách đo lường và tối ưu hiệu quả nội dung
+
+---
+
+## Quá trình thực hiện
+
+### 1. Content Strategy cho sinh viên kinh doanh
+
+**Câu hỏi cốt lõi trước khi tạo content:**
+1. **Ai là audience?** → Sinh viên cùng ngành, nhà tuyển dụng, hay khách hàng tiềm năng?
+2. **Họ muốn gì?** → Thông tin hữu ích, giải trí, hay cảm hứng?
+3. **Mình muốn gì?** → Xây dựng brand cá nhân, bán hàng, hay chỉ chia sẻ kiến thức?
+4. **Kênh nào phù hợp?** → LinkedIn (B2B professional), TikTok (viral rộng), Instagram (visual storytelling)?
+5. **Đo lường bằng gì?** → Views, engagement rate, leads generated?
+
+### 2. Quy trình sản xuất nội dung
+
+\`\`\`
+IDEATE → PLAN → CREATE → REVIEW → PUBLISH → ANALYZE → OPTIMIZE
+\`\`\`
+
+**Tôi thực hành quy trình này với chủ đề "Xu hướng kinh doanh 2024 cho Gen Z":**
+
+**Bước 1 — Ideate:** Brainstorm 20 ý tưởng trong 10 phút (không lọc), sau đó chọn 3 tốt nhất
+
+**Bước 2 — Plan:** Xác định format (LinkedIn article), cấu trúc (5 xu hướng, mỗi xu hướng 200 chữ)
+
+**Bước 3 — Create:** Viết draft đầu tiên không cần hoàn hảo, dùng AI hỗ trợ outline
+
+### 3. Thực hành: 3 định dạng content
+
+**📝 LinkedIn Article: "5 Kỹ năng số sinh viên kinh doanh cần học ngay hôm nay"**
+
+Tôi viết bài 800 chữ với cấu trúc:
+- Hook mạnh: số liệu gây bất ngờ về thị trường lao động
+- 5 kỹ năng: Data literacy, AI literacy, Digital communication, Content creation, Cybersecurity
+
+**🖼️ Infographic: "Bản đồ công cụ AI cho sinh viên kinh doanh"**
+
+Tạo bằng Canva theo nguyên tắc:
+
+| Yếu tố | Nguyên tắc áp dụng |
+|--------|-------------------|
+| Layout | Z-pattern (đọc từ trái sang phải, trên xuống dưới) |
+| Màu sắc | 3 màu chủ đạo, tỷ lệ 60-30-10 |
+| Typography | 2 font (serif cho tiêu đề, sans-serif cho body) |
+| Whitespace | Đủ khoảng trống để "thở" |
+
+**🎬 TikTok/Reels: "Học kinh doanh bằng xem phim"**
+
+Video 45 giây format: Hook (5s) → Main content (30s) → CTA (10s)
+
+### 4. AI trong content creation
+
+| Công cụ | Task | Đánh giá |
+|---------|------|-----------|
+| ChatGPT | Outline, brainstorm, draft | ★★★★☆ — Cần customize nhiều |
+| Canva AI | Magic Write, Design suggestions | ★★★☆☆ — Tốt cho template |
+| CapCut | Auto subtitle, auto cut | ★★★★★ — Tiết kiệm thời gian nhất |
+| Midjourney | Hình ảnh cho infographic | ★★★★☆ — Đẹp nhưng cần prompt kỹ |
+
+> "Nội dung tốt nhất không phải nội dung hoàn hảo — mà là nội dung *đúng người, đúng thời điểm, đúng cảm xúc*."
+
+---
+
+## Sản phẩm đính kèm
+
+- 📄 [Báo cáo - BaoCao\\_Bai5\\_SangTaoNoiDung.pdf](#) *(Đang cập nhật)*
+- 🖼️ [Infographic "AI Tools Map" - Infographic\\_AITools.png](#) *(Đang cập nhật)*
+- 🎥 [Video 45s - Video\\_HocKinhDoanh.mp4](#) *(Đang cập nhật)*
+`,
+
+  'bai-6': `## Mục tiêu bài tập
+
+Trong thế giới kinh doanh, **uy tín là tài sản quý giá nhất** — và uy tín đó có thể bị phá hủy trong vài giờ bởi một vi phạm an toàn thông tin hay một scandal học thuật. Mục tiêu:
+
+- Hiểu và tự bảo vệ thông tin cá nhân trong môi trường số
+- Nắm rõ ranh giới giữa hỗ trợ AI và gian lận học thuật
+- Xây dựng thói quen bảo mật thông tin chuyên nghiệp
+- Hiểu trách nhiệm pháp lý và đạo đức của người dùng internet
+
+---
+
+## Quá trình thực hiện
+
+### 1. Tại sao an toàn số quan trọng đặc biệt với sinh viên kinh doanh?
+
+Sinh viên kinh doanh có nguy cơ cao hơn nhiều ngành khác vì:
+
+- **Tiếp xúc với dữ liệu nhạy cảm**: Báo cáo thị trường, thông tin khách hàng, chiến lược kinh doanh
+- **Mạng lưới quan hệ rộng**: LinkedIn, email với đối tác, nhà tuyển dụng
+- **Thường xuyên dùng Wi-Fi công cộng**: Thư viện, quán cà phê, co-working space
+- **Tài khoản tài chính**: Internet banking, ví điện tử, thanh toán trực tuyến
+
+> Theo báo cáo của Kaspersky 2023, 67% sinh viên Việt Nam chưa từng sử dụng mật khẩu khác nhau cho các tài khoản quan trọng.
+
+### 2. Kiểm tra và cải thiện bảo mật cá nhân
+
+**Trước khi học bài này:**
+
+| Hành vi bảo mật | Tình trạng của tôi |
+|----------------|-------------------|
+| Mật khẩu riêng cho từng tài khoản | ❌ Dùng 2-3 mật khẩu cho tất cả |
+| Bật xác thực 2 yếu tố (2FA) | ❌ Chỉ Gmail |
+| Kiểm tra link trước khi click | ❌ Thỉnh thoảng mới kiểm tra |
+| Backup dữ liệu quan trọng | ❌ Chưa làm |
+
+**Sau khi học và thực hành:**
+
+| Hành vi bảo mật | Thay đổi |
+|----------------|---------|
+| Mật khẩu | ✅ Dùng **Bitwarden** (password manager miễn phí) |
+| 2FA | ✅ Bật cho Gmail, Facebook, TikTok, Tài khoản ngân hàng |
+| Backup | ✅ Tự động sync Google Drive hàng ngày |
+
+### 3. Liêm chính học thuật trong thời đại AI
+
+\`\`\`
+MỨC 1 — Hoàn toàn được phép:
+  • Dùng AI giải thích khái niệm khó hiểu
+  • Brainstorm ý tưởng ban đầu
+  • Kiểm tra ngữ pháp, cách diễn đạt
+
+MỨC 2 — Được phép nếu khai báo:
+  • AI viết outline, mình viết lại theo ý hiểu
+  • AI tạo bản nháp, mình chỉnh sửa đáng kể (>50%)
+
+MỨC 3 — Vi phạm liêm chính:
+  • Nộp bài do AI viết 100% mà không chỉnh sửa
+  • Bịa đặt trích dẫn (AI có thể hallucinate nguồn)
+  • Copy từ AI mà không hiểu nội dung mình nộp
+\`\`\`
+
+> "Tôi có thể giải thích *mọi* nội dung trong bài nộp của mình không? Nếu không — tôi chưa thực sự học, dù điểm có cao đến đâu."
+
+---
+
+## Sản phẩm đính kèm
+
+- 📄 [Báo cáo - BaoCao\\_Bai6\\_AnToanSo.pdf](#) *(Đang cập nhật)*
+- 🛡️ [Personal Security Audit Checklist - SecurityAudit.pdf](#) *(Đang cập nhật)*
+- 📋 [Framework sử dụng AI có đạo đức - AI\\_Ethics\\_Student.pdf](#) *(Đang cập nhật)*
+`,
+};
 
 
-// ──────────────────────────────────────────────────────────────
-// GLOBAL STATE
-// ──────────────────────────────────────────────────────────────
 let lenis = null;
 let currentView = 'home';
 let isTransitioning = false;
@@ -638,26 +1086,15 @@ async function loadProjectDetail(id) {
     thumbWrap.style.display = 'block';
   }
 
-  // Show loading spinner
   const contentEl = document.getElementById('markdown-content');
-  contentEl.innerHTML = `
-    <div class="detail__loading" id="detail-loading">
-      <div class="detail__loading-dot"></div>
-      <div class="detail__loading-dot"></div>
-      <div class="detail__loading-dot"></div>
-    </div>
-  `;
 
-  // Fetch markdown
-  try {
-    const res = await fetch(`content/projects/${id}.md`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const raw = await res.text();
-    const { content } = parseFrontmatter(raw);
-    renderMarkdown(content, contentEl);
+  // Use inline content map — no fetch needed, works on GitHub Pages
+  const inlineContent = CONTENT_MAP[id];
+  if (inlineContent) {
+    renderMarkdown(inlineContent, contentEl);
     animateDetailEntry();
-  } catch (err) {
-    showDetailError(`Không thể tải nội dung. (${err.message})<br>Hãy đảm bảo mở file qua Live Server hoặc local server.`);
+  } else {
+    showDetailError('Không tìm thấy nội dung cho bài tập này.');
   }
 }
 
