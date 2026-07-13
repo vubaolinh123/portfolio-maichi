@@ -576,57 +576,148 @@
     <div class="view hidden" id="view-reflections">
       <section class="reflections-section" id="reflections">
         <div class="reflections__header">
-          <span class="reflections__eyebrow">— TỔNG KẾT</span>
+          <span class="reflections__eyebrow">— TỔNG KẾT HÀNH TRÌNH</span>
           <h1 class="reflections__title" data-splitting>Reflections</h1>
+          <p class="reflections__subtitle">Nhìn lại quá trình học tập, những trải nghiệm quý giá và bài học rút ra từ các bài tập thực hành.</p>
+        </div>
+
+        <!-- Stat Row -->
+        <div class="reflections__stats">
+          <div class="reflections__stat-card">
+            <span class="reflections__stat-num" data-val="6">0</span>
+            <span class="reflections__stat-label">Bài tập hoàn thành</span>
+          </div>
+          <div class="reflections__stat-card">
+            <div class="reflections__stat-num-wrap">
+              <span class="reflections__stat-num" data-val="10">0</span><span class="reflections__stat-suffix">+</span>
+            </div>
+            <span class="reflections__stat-label">Kỹ năng mới</span>
+          </div>
+          <div class="reflections__stat-card">
+            <div class="reflections__stat-num-wrap">
+              <span class="reflections__stat-num" data-val="50">0</span><span class="reflections__stat-suffix">+</span>
+            </div>
+            <span class="reflections__stat-label">Giờ học tập</span>
+          </div>
+          <div class="reflections__stat-card">
+            <span class="reflections__stat-num">∞</span>
+            <span class="reflections__stat-label">Động lực phát triển</span>
+          </div>
         </div>
 
         <div class="reflections__body">
 
-          <!-- 01 -->
-          <div class="reflection-block" id="ref-01">
-            <div class="reflection-block__num">01</div>
-            <div class="reflection-block__content">
-              <h2 class="reflection-block__heading">Trải nghiệm cá nhân</h2>
-              <p class="reflection-block__text">
-                Hành trình xây dựng portfolio này là một trong những trải nghiệm ý nghĩa nhất trong năm học đầu tiên của tôi tại Đại học Kinh tế - ĐHQGHN. Không đơn giản là một bài tập, đây là lần đầu tiên tôi phải tự thiết kế, tổ chức và thể hiện bản thân một cách đầy đủ và hệ thống.
-              </p>
-              <p class="reflection-block__text">
-                Là sinh viên quản trị kinh doanh, tôi nhận ra rằng kỹ năng số không hề “xa lạ” với ngành học của mình — ngược lại, đây chính là nền tảng cần thiết để vận hành doanh nghiệp trong thời đại số. Mỗi bài học từ kỹ năng số đều có ứng dụng thực tế trong quản trị, marketing và chiến lược kinh doanh.
-              </p>
+          <!-- Section: Những điều đã học được -->
+          <div class="reflections__section" id="ref-learned">
+            <div class="reflections__section-eyebrow">Trải nghiệm</div>
+            <h2 class="reflections__section-title">Những điều đã học được</h2>
+            <div class="reflections__grid-3">
+              <!-- Card 1 -->
+              <div class="ref-card">
+                <div class="ref-card__icon"><i class="ph ph-lightbulb"></i></div>
+                <h3 class="ref-card__title">Khám phá công nghệ</h3>
+                <p class="ref-card__text">Được tiếp cận với nhiều công cụ và nền tảng công nghệ hiện đại, từ quản lý file cho đến các công cụ AI tiên tiến.</p>
+              </div>
+              <!-- Card 2 -->
+              <div class="ref-card">
+                <div class="ref-card__icon"><i class="ph ph-handshake"></i></div>
+                <h3 class="ref-card__title">Kỹ năng hợp tác</h3>
+                <p class="ref-card__text">Học cách làm việc nhóm hiệu quả thông qua các công cụ cộng tác trực tuyến và quy trình quản lý dự án.</p>
+              </div>
+              <!-- Card 3 -->
+              <div class="ref-card">
+                <div class="ref-card__icon"><i class="ph ph-target"></i></div>
+                <h3 class="ref-card__title">Tư duy phản biện</h3>
+                <p class="ref-card__text">Phát triển khả năng đánh giá thông tin, sử dụng AI có trách nhiệm và tư duy sáng tạo trong giải quyết vấn đề.</p>
+              </div>
             </div>
           </div>
 
           <div class="reflections__divider" aria-hidden="true"></div>
 
-          <!-- 02 -->
-          <div class="reflection-block" id="ref-02">
-            <div class="reflection-block__num">02</div>
-            <div class="reflection-block__content">
-              <h2 class="reflection-block__heading">Kiến thức &amp; Kỹ năng</h2>
-              <div class="skills-list">
-                <div class="skills-list__item">
-                  <div class="skills-list__label">Thành thạo công cụ số</div>
-                  <p>Nắm vững và sử dụng tốt các thiết bị, phần mềm văn phòng và công cụ số phục vụ học tập và làm việc hiệu quả.</p>
+          <!-- Section: Bài học rút ra -->
+          <div class="reflections__section" id="ref-lessons">
+            <div class="reflections__section-eyebrow">Bài học</div>
+            <h2 class="reflections__section-title">Bài học rút ra</h2>
+            <div class="reflections__grid-2">
+              <div class="lesson-card">
+                <div class="lesson-card__num">01</div>
+                <h3 class="lesson-card__title">Kỹ năng số là cốt lõi của quản trị</h3>
+                <p class="lesson-card__text">Công nghệ không thay thế tư duy quản trị, nhưng là cánh tay nối dài giúp người làm quản lý tối ưu quy trình và tăng tốc ra quyết định gấp nhiều lần.</p>
+              </div>
+              <div class="lesson-card">
+                <div class="lesson-card__num">02</div>
+                <h3 class="lesson-card__title">Làm chủ công cụ chứ không phụ thuộc</h3>
+                <p class="lesson-card__text">Sử dụng AI hay bất kỳ công cụ số nào cũng cần một bộ lọc phản biện và nền tảng kiến thức vững chắc để kiểm chứng thông tin, giữ gìn tính liêm chính.</p>
+              </div>
+              <div class="lesson-card">
+                <div class="lesson-card__num">03</div>
+                <h3 class="lesson-card__title">Tự học là kỹ năng sống còn</h3>
+                <p class="lesson-card__text">Công cụ công nghệ thay đổi liên tục theo từng tháng. Tư duy sẵn sàng học hỏi, thử nghiệm cái mới và tự cập nhật kiến thức là năng lực bền vững nhất.</p>
+              </div>
+              <div class="lesson-card">
+                <div class="lesson-card__num">04</div>
+                <h3 class="lesson-card__title">Giao tiếp số hiệu quả cần sự thấu hiểu</h3>
+                <p class="lesson-card__text">Cộng tác online không chỉ là gửi file hay chat, mà là xây dựng quy trình rõ ràng, tôn trọng deadline và thấu hiểu các thành viên trong nhóm.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reflections__divider" aria-hidden="true"></div>
+
+          <!-- Section: Kỹ năng đạt được -->
+          <div class="reflections__section" id="ref-skills">
+            <div class="reflections__section-eyebrow">Năng lực</div>
+            <h2 class="reflections__section-title">Kỹ năng đạt được</h2>
+            <div class="ref-skills-grid">
+              
+              <div class="skill-progress">
+                <div class="skill-progress__header">
+                  <span class="skill-progress__name">Data Literacy (Khai thác &amp; Đánh giá dữ liệu)</span>
+                  <span class="skill-progress__val">90%</span>
                 </div>
-                <div class="skills-list__item">
-                  <div class="skills-list__label">Kỹ năng khai thác thông tin</div>
-                  <p>Biết cách tìm kiếm, đánh giá và tổ chức thông tin số một cách có phương pháp — rất cần thiết cho nghiên cứu thị trường và phân tích kinh doanh.</p>
+                <div class="skill-progress__bar">
+                  <div class="skill-progress__fill" data-progress="90%"></div>
                 </div>
-                <div class="skills-list__item">
-                  <div class="skills-list__label">Tư duy về AI trong kinh doanh</div>
-                  <p>Hiểu cách AI đang thay đổi mô hình kinh doanh, từ tự động hóa quy trình đến cá nhân hóa trải nghiệm khách hàng và phân tích dữ liệu lớn.</p>
+              </div>
+
+              <div class="skill-progress">
+                <div class="skill-progress__header">
+                  <span class="skill-progress__name">AI Prompting &amp; Tối ưu hóa (ChatGPT, Gemini)</span>
+                  <span class="skill-progress__val">85%</span>
                 </div>
-                <div class="skills-list__item">
-                  <div class="skills-list__label">Hợp tác và giao tiếp số</div>
-                  <p>Thành thạo Google Workspace, Microsoft 365 và các nền tảng làm việc nhóm. Giao tiếp chuyên nghiệp qua email, video call và các kênh số.</p>
+                <div class="skill-progress__bar">
+                  <div class="skill-progress__fill" data-progress="85%"></div>
                 </div>
-                <div class="skills-list__item">
-                  <div class="skills-list__label">Sáng tạo nội dung số</div>
-                  <p>Có khả năng lên kế hoạch và sản xuất nội dung số đa dạng — phục vụ marketing, trưng bày báo cáo và xây dựng thương hiệu cá nhân.</p>
+              </div>
+
+              <div class="skill-progress">
+                <div class="skill-progress__header">
+                  <span class="skill-progress__name">Digital Collaboration (Cộng tác nhóm số)</span>
+                  <span class="skill-progress__val">95%</span>
                 </div>
-                <div class="skills-list__item">
-                  <div class="skills-list__label">An toàn &amp; Liêm chính Học thuật</div>
-                  <p>Nhận thức rõ về bảo mật thông tin, quyền riêng tư số và có thái độ sử dụng AI có đạo đức trong học tập.</p>
+                <div class="skill-progress__bar">
+                  <div class="skill-progress__fill" data-progress="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-progress">
+                <div class="skill-progress__header">
+                  <span class="skill-progress__name">Sáng tạo nội dung (Infographics, Video Production)</span>
+                  <span class="skill-progress__val">80%</span>
+                </div>
+                <div class="skill-progress__bar">
+                  <div class="skill-progress__fill" data-progress="80%"></div>
+                </div>
+              </div>
+
+              <div class="skill-progress">
+                <div class="skill-progress__header">
+                  <span class="skill-progress__name">An toàn thông tin &amp; Liêm chính học thuật</span>
+                  <span class="skill-progress__val">90%</span>
+                </div>
+                <div class="skill-progress__bar">
+                  <div class="skill-progress__fill" data-progress="90%"></div>
                 </div>
               </div>
             </div>
@@ -634,14 +725,54 @@
 
           <div class="reflections__divider" aria-hidden="true"></div>
 
-          <!-- 03 -->
-          <div class="reflection-block" id="ref-03">
-            <div class="reflection-block__num">03</div>
-            <div class="reflection-block__content">
-              <h2 class="reflection-block__heading">Điểm tâm đắc &amp; Thách thức</h2>
-              <div class="dual-col">
-                <div class="dual-col__item highlight-col">
-                  <div class="dual-col__label">
+          <!-- Section: Kế hoạch phát triển -->
+          <div class="reflections__section" id="ref-future">
+            <div class="reflections__section-eyebrow">Tương lai</div>
+            <h2 class="reflections__section-title">Kế hoạch phát triển</h2>
+            <div class="future-timeline">
+              <!-- Step 1 -->
+              <div class="future-step">
+                <div class="future-step__dot"></div>
+                <div class="future-step__content">
+                  <div class="future-step__time">Giai đoạn 1 (Năm 2)</div>
+                  <h3 class="future-step__title">Đào sâu chuyên môn Digital Marketing &amp; Thương mại điện tử</h3>
+                  <p class="future-step__text">Ứng dụng các kỹ năng số đã tích lũy vào các môn học chuyên ngành, học thêm các chứng chỉ chuyên nghiệp của Google, Meta.</p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="future-step">
+                <div class="future-step__dot"></div>
+                <div class="future-step__content">
+                  <div class="future-step__time">Giai đoạn 2 (Năm 3)</div>
+                  <h3 class="future-step__title">Thực tập &amp; Dự án thực tế</h3>
+                  <p class="future-step__text">Tham gia thực tập tại các doanh nghiệp hoặc dự án startup để cọ xát năng lực số trong môi trường vận hành thực tế.</p>
+                </div>
+              </div>
+              <!-- Step 3 -->
+              <div class="future-step">
+                <div class="future-step__dot"></div>
+                <div class="future-step__content">
+                  <div class="future-step__time">Giai đoạn 3 (Năm 4)</div>
+                  <h3 class="future-step__title">Hoàn thiện kỹ năng Quản trị số</h3>
+                  <p class="future-step__text">Tích hợp năng lực kỹ thuật và tư duy chiến lược kinh doanh để sẵn sàng trở thành nhân sự số chất lượng cao sau tốt nghiệp.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /reflections__body -->
+
+        <!-- Closing -->
+        <div class="reflections__end">
+          <div class="three-dots">
+            <span class="three-dots__dot"></span>
+            <span class="three-dots__dot"></span>
+            <span class="three-dots__dot"></span>
+          </div>
+          <p class="reflections__end-text">Cảm ơn bạn đã ghé thăm portfolio của tôi.</p>
+        </div>
+      </section>
+    </div><!-- /view-reflections -->l__label">
                     <i class="ph ph-star"></i>
                     Tâm đắc nhất
                   </div>

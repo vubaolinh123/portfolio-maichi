@@ -783,7 +783,7 @@ function initScrollAnimations() {
 // REFLECTIONS ANIMATIONS
 // ──────────────────────────────────────────────────────────────
 function initReflectionsAnimations() {
-  // Title chars
+  // Title character slide up
   const refChars = document.querySelectorAll('.reflections__title .char');
   if (refChars.length) {
     gsap.to(refChars, {
@@ -798,16 +798,50 @@ function initReflectionsAnimations() {
     });
   }
 
-  // Reflection blocks
-  document.querySelectorAll('.reflection-block').forEach(block => {
-    gsap.to(block, {
-      opacity: 1, y: 0,
-      duration: 0.9,
+  // Stat Counters (counting up on enter)
+  const stats = document.querySelectorAll('.reflections__stat-num[data-val]');
+  stats.forEach(stat => {
+    const targetVal = parseInt(stat.getAttribute('data-val'), 10);
+    if (isNaN(targetVal)) return;
+
+    gsap.fromTo(stat, 
+      { textContent: '0' },
+      {
+        textContent: targetVal,
+        duration: 1.8,
+        ease: 'power2.out',
+        snap: { textContent: 1 },
+        scrollTrigger: {
+          trigger: stat,
+          start: 'top 92%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  });
+
+  // Skills Progress Bar Animation
+  const fills = document.querySelectorAll('.skill-progress__fill');
+  fills.forEach(fill => {
+    const progress = fill.getAttribute('data-progress');
+    gsap.to(fill, {
+      width: progress,
+      duration: 1.6,
       ease: 'power3.out',
       scrollTrigger: {
-        trigger: block,
-        start: 'top 85%',
+        trigger: fill,
+        start: 'top 95%',
+        toggleActions: 'play none none none',
       }
+    });
+  });
+
+  // Reveal sections on scroll via CSS reveal class toggle
+  document.querySelectorAll('.reflections__section').forEach(section => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 88%',
+      onEnter: () => section.classList.add('reveal'),
     });
   });
 }
