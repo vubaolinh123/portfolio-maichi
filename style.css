@@ -340,8 +340,8 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   padding-left: 0;
 }
 
-/* Splitting char animation */
-.hero__title .char {
+/* Splitting char animation — only start hidden when JS is running */
+.js .hero__title .char {
   display: inline-block;
   transform: translateY(110%);
   transition: transform 0s;
@@ -504,7 +504,8 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   font-family: var(--font-serif);
 }
 
-.about__title .char {
+/* Only start hidden when JS is running */
+.js .about__title .char {
   display: inline-block;
   transform: translateY(110%);
 }
@@ -520,6 +521,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   font-weight: 400;
   line-height: 1.85;
   margin-bottom: 20px;
+}
+/* Only hide for animation when JS is running */
+.js .about__lead {
   opacity: 0;
   transform: translateY(30px);
 }
@@ -529,14 +533,20 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   line-height: 1.95;
   opacity: 0.7;
   margin-bottom: 48px;
+}
+/* Only hide for animation when JS is running */
+.js .about__body {
   opacity: 0;
   transform: translateY(30px);
 }
 
 .about__goals {
+  width: 100%;
+}
+/* Only hide for animation when JS is running */
+.js .about__goals {
   opacity: 0;
   transform: translateY(30px);
-  width: 100%;
 }
 
 .about__goals-title {
@@ -585,6 +595,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 .about__image-col {
   position: relative;
   z-index: 1;
+}
+/* Only hide for animation when JS is running */
+.js .about__image-col {
   opacity: 0;
   transform: translateY(40px);
 }
@@ -2857,5 +2870,52 @@ body.on-dark .dot-nav__item { background: var(--cream); }
     width: 42px;
     height: 42px;
     font-size: 18px;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY: REDUCED MOTION FALLBACK
+   Reset all animation initial states so content is always
+   visible when OS 'prefers-reduced-motion' is enabled.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .js .hero__title .char,
+  .js .about__title .char,
+  .js .reflections__title .char {
+    transform: none !important;
+  }
+
+  .js .about__lead,
+  .js .about__body,
+  .js .about__goals,
+  .js .about__image-col {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .js .hero__pill,
+  .js .hero__scroll-cta {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .js .timeline__node,
+  .js .timeline__content {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reflections__section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Disable all CSS keyframe animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

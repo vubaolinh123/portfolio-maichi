@@ -542,10 +542,12 @@ let isTransitioning = false;
 
 // Detect reduced-motion preference for accessibility & performance
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-// Detect low-power device heuristic (touch device = likely mobile/battery)
-const isLowPower = navigator.maxTouchPoints > 0 || window.innerWidth < 768;
-// Skip heavy effects on low-power or reduced-motion
-const useHeavyFX = !prefersReducedMotion && !isLowPower;
+// Detect mobile device by screen size only — DO NOT use maxTouchPoints because
+// many Windows laptops with touch screens return maxTouchPoints > 0 while still
+// being used with a mouse/keyboard, which would incorrectly disable animations.
+const isMobileViewport = window.innerWidth < 768;
+// useHeavyFX: only skip heavy effects on actual small screens or if user prefers reduced motion
+const useHeavyFX = !prefersReducedMotion && !isMobileViewport;
 
 // ──────────────────────────────────────────────────────────────
 // INIT
@@ -593,9 +595,13 @@ function initCursor() {
   const follower = document.getElementById('cursor-follower');
   if (!cursor || !follower) return;
 
-  // Detect mobile viewports or touch capability and disable custom cursor
-  const isMobileOrTouch = window.innerWidth <= 900 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-  if (isMobileOrTouch) {
+  // Disable custom cursor only on real touch/mobile devices or small viewports.
+  // We intentionally do NOT check navigator.maxTouchPoints here because many
+  // Windows touchscreen laptops report maxTouchPoints > 0 even when used
+  // with a mouse — hiding the cursor incorrectly for those users.
+  // 'ontouchstart' in window is a more reliable indicator of a real touch-primary device.
+  const isRealTouchDevice = ('ontouchstart' in window) || window.innerWidth <= 900;
+  if (isRealTouchDevice) {
     cursor.style.display = 'none';
     follower.style.display = 'none';
     document.body.classList.remove('cursor-hover');
@@ -693,7 +699,19 @@ function initHeroAnimations() {
 // SCROLL ANIMATIONS (About Section)
 // ──────────────────────────────────────────────────────────────
 function initScrollAnimations() {
-  if (prefersReducedMotion) return;
+  // The elements below start at opacity:0 via .js CSS guard.
+  // If reduced motion is preferred we must reveal them immediately,
+  // otherwise they'll remain permanently invisible.
+  const aboutAnims = ['.about__lead', '.about__body', '.about__goals', '.about__image-col'];
+  if (prefersReducedMotion) {
+    aboutAnims.forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) { el.style.opacity = '1'; el.style.transform = 'none'; }
+    });
+    // Also reveal title chars if Splitting ran
+    document.querySelectorAll('.about__title .char').forEach(c => { c.style.transform = 'none'; });
+    return;
+  }
 
   // About title chars
   const aboutChars = document.querySelectorAll('.about__title .char');
@@ -711,8 +729,7 @@ function initScrollAnimations() {
   }
 
   // About text blocks — simple fade+slide, no parallax
-  const aboutAnims = ['.about__lead', '.about__body', '.about__goals', '.about__image-col'];
-  aboutAnims.forEach((sel, i) => {
+  ['.about__lead', '.about__body', '.about__goals', '.about__image-col'].forEach((sel, i) => {
     gsap.to(sel, {
       opacity: 1, y: 0,
       duration: 0.8,
