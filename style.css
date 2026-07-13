@@ -770,8 +770,6 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 .timeline__item {
   position: relative;
   margin-bottom: 48px;
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .timeline__item:last-child {
@@ -789,8 +787,32 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   background: var(--cream);
   border: 3px solid rgba(90, 0, 0, 0.4);
   z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Timeline content container */
+.timeline__content {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+}
+
+/* Start states if JS is enabled */
+.js .timeline__node {
+  opacity: 0;
+  transform: scale(0);
+}
+.js .timeline__content {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* Reveal states when active class is added */
+.timeline__item.reveal .timeline__node {
+  opacity: 1;
   transform: scale(1);
-  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+.timeline__item.reveal .timeline__content {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Timeline badge */

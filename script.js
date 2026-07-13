@@ -739,46 +739,26 @@ function initScrollAnimations() {
     });
   }
 
-  // Home timeline items staggered fade/slide
+  // Home timeline items reveal via CSS class toggle on scroll
   const timelineItems = document.querySelectorAll('.timeline__item');
   if (timelineItems.length) {
-    timelineItems.forEach((item, i) => {
-      const node = item.querySelector('.timeline__node');
-      const badge = item.querySelector('.timeline__badge');
-      const title = item.querySelector('.timeline__item-title');
-      const desc = item.querySelector('.timeline__item-desc');
-      
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-        }
+    timelineItems.forEach((item) => {
+      // Toggle reveal class (handles fade-in/slide animations via CSS)
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 88%',
+        onEnter: () => item.classList.add('reveal'),
+        // Keep visible once revealed for standard UX, or toggle if preferred
       });
 
-      tl.from(node, {
-        scale: 0,
-        opacity: 0,
-        duration: 0.5,
-        ease: 'back.out(1.7)'
-      })
-      .from([badge, title, desc], {
-        opacity: 0,
-        x: 30,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power3.out'
-      }, '-=0.3');
-
-      // Scroll active highlights
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 65%',
-          end: 'bottom 65%',
-          onEnter: () => item.classList.add('active'),
-          onLeaveBack: () => item.classList.remove('active'),
-          onEnterBack: () => item.classList.add('active'),
-        }
+      // Toggle active class (handles dot highlight color on pass)
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 65%',
+        end: 'bottom 65%',
+        onEnter: () => item.classList.add('active'),
+        onLeaveBack: () => item.classList.remove('active'),
+        onEnterBack: () => item.classList.add('active'),
       });
     });
   }
