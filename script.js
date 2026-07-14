@@ -1227,6 +1227,18 @@ async function loadProjectDetail(id) {
     return;
   }
 
+  // Clear any stale inline opacity/transform styles left by previous GSAP animations
+  // This prevents content from being permanently invisible on revisit
+  ['.detail__back-bar', '.detail__meta', '.detail__title', '.detail__thumb-wrap', '.markdown-content']
+    .forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) {
+        el.style.opacity = '';
+        el.style.transform = '';
+        el.style.visibility = '';
+      }
+    });
+
   // Update static fields immediately
   document.getElementById('detail-pill').textContent  = proj.tag;
   document.getElementById('detail-title').textContent = proj.title;
@@ -1401,12 +1413,51 @@ function renderMarkdown(mdText, container) {
 // DETAIL PAGE ANIMATION
 // ──────────────────────────────────────────────────────────────
 function animateDetailEntry() {
-  const tl = gsap.timeline();
-  tl.from('.detail__back-bar',    { opacity: 0, y: -20, duration: 0.5, ease: 'power3.out' })
-    .from('.detail__meta',        { opacity: 0, y: 20,  duration: 0.5, ease: 'power3.out' }, '-=0.2')
-    .from('.detail__title',       { opacity: 0, y: 30,  duration: 0.7, ease: 'power3.out' }, '-=0.3')
-    .from('.detail__thumb-wrap',  { opacity: 0, scale: 0.97, duration: 0.7, ease: 'power3.out' }, '-=0.4')
-    .from('.markdown-content',    { opacity: 0, y: 20,  duration: 0.8, ease: 'power3.out' }, '-=0.3');
+  // IMPORTANT: Never use gsap.from() here because it temporarily sets
+  // opacity:0 on elements. If GSAP fails mid-animation, content stays
+  // permanently invisible. Instead, use fromTo() with explicit end-state
+  // or use CSS transitions with a class toggle (safer approach).
+
+  // First ensure everything is visible (safety baseline)
+  const els = [
+    document.querySelector('.detail__back-bar'),
+    document.querySelector('.detail__meta'),
+    document.querySelector('.detail__title'),
+    document.querySelector('.detail__thumb-wrap'),
+    document.querySelector('.markdown-content'),
+  ].filter(Boolean);
+
+  // Set everything fully visible immediately as baseline
+  els.forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+
+  // Only run fancy animation if GSAP is available and no reduced motion
+  if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
+    // Use fromTo (not from) so end state is always guaranteed
+    const tl = gsap.timeline();
+    tl.fromTo('.detail__back-bar',
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', clearProps: 'all' }
+    )
+    .fromTo('.detail__meta',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', clearProps: 'all' }, '-=0.2'
+    )
+    .fromTo('.detail__title',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', clearProps: 'all' }, '-=0.3'
+    )
+    .fromTo('.detail__thumb-wrap',
+      { opacity: 0, scale: 0.97 },
+      { opacity: 1, scale: 1, duration: 0.7, ease: 'power3.out', clearProps: 'all' }, '-=0.4'
+    )
+    .fromTo('.markdown-content',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', clearProps: 'all' }, '-=0.3'
+    );
+  }
 }
 
 // ──────────────────────────────────────────────────────────────
@@ -1417,10 +1468,7 @@ function showDetailError(msg) {
   if (el) {
     el.innerHTML = `
       <div style="padding: 48px 0; opacity: 0.6;">
-        <p style="font-size:14px; line-height:1.8;">${msg}</p>
-        <p style="margin-top:16px; font-size:12px; opacity:0.5;">
-          Tip: Mở terminal và chạy <code>python -m http.server 8000</code> trong thư mục dự án, sau đó truy cập <code>http://localhost:8000</code>
-        </p>
+        <p style="font-size:16px; line-height:1.8;">⚠️ ${msg}</p>
       </div>
     `;
   }
