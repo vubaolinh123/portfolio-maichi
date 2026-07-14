@@ -1,5 +1,5 @@
 ---
-title: Máy tính và các thiết bị ngoại vi
+title: Máy tính và quản lý tệp/thư mục
 subtitle: Bài tập 01
 tag: BÀI TẬP 01
 thumbnail: assets/images/bai1-thumb.png

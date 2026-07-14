@@ -27,8 +27,14 @@
   <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
   <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 
-  <!-- marked.js -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- marked.js — with CDN fallback in case jsdelivr is blocked -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+  <script>
+    // If jsdelivr failed, try unpkg as fallback CDN
+    if (typeof marked === 'undefined') {
+      document.write('<script src="https://unpkg.com/marked@9/marked.min.js"><\/script>');
+    }
+  </script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -82,14 +88,14 @@
             </h1>
             <div class="hero__meta">
               <span class="hero__pill">Sinh viên Quản trị Kinh doanh</span>
-              <span class="hero__pill">ĐH Kinh tế — ĐHQGHN</span>
+              <span class="hero__pill">ĐH Kinh tế - ĐHQGHN</span>
             </div>
           </div>
 
           <!-- Right Column: Manifesto Counterweight -->
           <div class="hero__col-right">
             <div class="hero__manifesto">
-              <p>Tư duy hệ thống kết hợp với góc nhìn sáng tạo định hình cách tôi tiếp cận mọi thử thách kinh doanh trong thời đại số. Đây là không gian lưu trữ và thể hiện những hành trình thực tiễn đó.</p>
+              <p>Portfolio này là hành trình mình cùng AI co-create thế giới học tập. Dọn gọn những bộn bề dữ liệu thành một hệ thống tri thức thông minh, vẽ nét chỉn chu cho từng sản phẩm học thuật, và mượn công nghệ số để kể lại những câu chuyện văn hóa Việt Nam thật trẻ, thật gần.</p>
             </div>
           </div>
         </div>
@@ -114,10 +120,9 @@
             <h2 class="about__title" data-splitting>About<br/><span class="italic">Me</span></h2>
             <div class="about__intro">
               <p class="about__lead">
-                Xin chào, tôi là <strong>Nguyễn Mai Chi</strong> — sinh viên năm nhất ngành Quản trị Kinh doanh tại Trường Đại học Kinh tế, Đại học Quốc gia Hà Nội. Tôi đam mê khám phá giao điểm giữa kinh doanh và công nghệ số — nơi sự sáng tạo gặp gỡ tư duy chiến lược.
-              </p>
+                Xin chào, tôi là <strong>Nguyễn Mai Chi</strong> - sinh viên năm nhất ngành Quản trị Kinh doanh tại Trường Đại học Kinh tế - Đại học Quốc gia Hà Nội. Với mình, công nghệ là công cụ, còn kinh doanh là tư duy - và mình luôn muốn đứng ở điểm giao thoa để kiến tạo nên những giá trị mới.
               <p class="about__body">
-                Ngoài giờ học, tôi thích đọc sách về kinh doanh và tâm lý học, khám phá âm nhạc và du lịch. Những sở thích này giúp tôi nuôi dưỡng tư duy đa chiều và khả năng hiểu con người — yếu tố cốt lõi trong quản trị.
+                Thay vì ngồi một chỗ ôm sách vở, mình thuộc kiểu người thực tế thích lao vào hành động, thử sức với đủ thứ việc mới và trải nghiệm thực tế để tự rút ra bài học. Những lúc mỏi mệt quá mình chỉ thích được đi du lịch thật xa hoặc thu mình vào một góc, đi trốn thế giới cùng âm nhạc và chìm sâu vào giấc ngủ. Với mình việc vừa có kinh nghiệm thực tế và việc thấu hiểu bản thân và con người chính là chìa khóa cốt lõi để trở thành một nhà quản trị tương lai.
               </p>
             </div>
 
@@ -187,8 +192,8 @@
               <div class="timeline__node"></div>
               <div class="timeline__content">
                 <span class="timeline__badge"><i class="ph ph-cpu"></i> BÀI TẬP 1</span>
-                <h3 class="timeline__item-title">Máy tính và các thiết bị ngoại vi</h3>
-                <p class="timeline__item-desc">Tìm hiểu cấu trúc máy tính và hệ sinh thái thiết bị ngoại vi — nền tảng để sử dụng hiệu quả các công cụ số phục vụ học tập và công việc.</p>
+                <h3 class="timeline__item-title">Máy tính và quản lý tệp/thư mục</h3>
+                <p class="timeline__item-desc">Thiết lập cấu trúc lưu trữ khoa học trên máy tính cá nhân, thực hiện phân loại dữ liệu học tập và chuẩn hóa quy trình đặt tên tài liệu.</p>
                 <a href="#project/bai-1" class="timeline__item-link">
                   <span>Xem chi tiết bài làm</span>
                   <i class="ph ph-arrow-up-right"></i>
@@ -201,8 +206,8 @@
               <div class="timeline__node"></div>
               <div class="timeline__content">
                 <span class="timeline__badge"><i class="ph ph-database"></i> BÀI TẬP 2</span>
-                <h3 class="timeline__item-title">Khai thác dữ liệu và thông tin</h3>
-                <p class="timeline__item-desc">Xây dựng kỹ năng tìm kiếm, đánh giá và tổ chức thông tin số — kỹ năng then chốt trong nghiên cứu thị trường và phân tích dữ liệu.</p>
+                <h3 class="timeline__item-title">Khai thác dữ liệu và đánh giá thông tin</h3>
+                <p class="timeline__item-desc">Thực hiện truy vấn thông tin học thuật bằng các cú pháp tìm kiếm chuyên sâu trên Internet và tiến hành thẩm định độ tin cậy của các nguồn tài liệu thu thập được.</p>
                 <a href="#project/bai-2" class="timeline__item-link">
                   <span>Xem chi tiết bài làm</span>
                   <i class="ph ph-arrow-up-right"></i>
@@ -215,8 +220,8 @@
               <div class="timeline__node"></div>
               <div class="timeline__content">
                 <span class="timeline__badge"><i class="ph ph-brain"></i> BÀI TẬP 3</span>
-                <h3 class="timeline__item-title">Tổng quan về trí tuệ nhân tạo</h3>
-                <p class="timeline__item-desc">Khám phá cách AI định hình lại kinh doanh — thực hành sử dụng ChatGPT/Gemini để tối ưu hiệu suất học tập và viết prompt hiệu quả.</p>
+                <h3 class="timeline__item-title">Viết prompt hiệu quả và sử dụng AI</h3>
+                <p class="timeline__item-desc">Thực hành xây dựng, thử nghiệm và cải tiến các câu lệnh (Prompt) khi tương tác trực tiếp với các mô hình ngôn ngữ lớn (LLMs).</p>
                 <a href="#project/bai-3" class="timeline__item-link">
                   <span>Xem chi tiết bài làm</span>
                   <i class="ph ph-arrow-up-right"></i>
@@ -229,8 +234,8 @@
               <div class="timeline__node"></div>
               <div class="timeline__content">
                 <span class="timeline__badge"><i class="ph ph-users-three"></i> BÀI TẬP 4</span>
-                <h3 class="timeline__item-title">Giao tiếp và hợp tác trong môi trường số</h3>
-                <p class="timeline__item-desc">Thành thạo các công cụ cộng tác trực tuyến nhóm hybrid, nguyên tắc viết email chuyên nghiệp và xây dựng hồ sơ LinkedIn.</p>
+                <h3 class="timeline__item-title">Hợp tác trực tuyến trong môi trường số</h3>
+                <p class="timeline__item-desc">Phối hợp nhóm trên các nền tảng điện toán đám mây để thiết lập kế hoạch, phân chia nhiệm vụ và theo dõi tiến độ dự án trực tuyến.</p>
                 <a href="#project/bai-4" class="timeline__item-link">
                   <span>Xem chi tiết bài làm</span>
                   <i class="ph ph-arrow-up-right"></i>
@@ -243,8 +248,8 @@
               <div class="timeline__node"></div>
               <div class="timeline__content">
                 <span class="timeline__badge"><i class="ph ph-paint-brush-broad"></i> BÀI TẬP 5</span>
-                <h3 class="timeline__item-title">Sáng tạo nội dung số</h3>
-                <p class="timeline__item-desc">Thực hành sản xuất nội dung số đa định dạng (bài viết LinkedIn, Infographic Canva, video ngắn) áp dụng tư duy storytelling.</p>
+                <h3 class="timeline__item-title">Sáng tạo nội dung số với AI</h3>
+                <p class="timeline__item-desc">Ứng dụng các công cụ trí tuệ nhân tạo để thiết kế, tạo sinh hình ảnh và xây dựng văn bản, từ đó hoàn thiện một sản phẩm truyền thông số đồng bộ.</p>
                 <a href="#project/bai-5" class="timeline__item-link">
                   <span>Xem chi tiết bài làm</span>
                   <i class="ph ph-arrow-up-right"></i>
@@ -257,8 +262,8 @@
               <div class="timeline__node"></div>
               <div class="timeline__content">
                 <span class="timeline__badge"><i class="ph ph-shield-check"></i> BÀI TẬP 6</span>
-                <h3 class="timeline__item-title">An toàn và liêm chính học thuật trong môi trường số</h3>
-                <p class="timeline__item-desc">Xây dựng nền tảng đạo đức số, thực hiện Personal Security Audit, nhận diện phishing và ứng dụng AI có đạo đức.</p>
+                <h3 class="timeline__item-title">An toàn số, liêm chính học thuật và AI có trách nhiệm</h3>
+                <p class="timeline__item-desc">Nghiên cứu và xây dựng bộ nguyên tắc cá nhân về bảo mật thông tin, quy chuẩn trích dẫn tài liệu khoa học và các tiêu chuẩn đạo đức khi tương tác với công nghệ.</p>
                 <a href="#project/bai-6" class="timeline__item-link">
                   <span>Xem chi tiết bài làm</span>
                   <i class="ph ph-arrow-up-right"></i>
@@ -292,15 +297,15 @@
               </div>
               <h2 class="home-nav__card-title">Digital<br/><em>Projects</em></h2>
               <p class="home-nav__card-desc">
-                06 bài tập thực hành về các kỹ năng số cốt lõi — từ phần cứng máy tính, khai thác thông tin, trí tuệ nhân tạo đến sáng tạo nội dung và an toàn số. Mỗi bài là một hành trình học tập thực tiễn.
+                06 bài tập thực hành - 06 trạm trải nghiệm giúp mình làm chủ công nghệ số. Tại đây, mình trực tiếp bắt tay vào thử sức với mọi kỹ năng từ làm quen phần cứng, săn tìm thông tin, bắt trend cùng AI, cho đến sáng tạo nội dung và quản trị an toàn số. Mỗi bài tập là một bước đi thực tế để nâng tầm tư duy số của bản thân.
               </p>
               <ul class="home-nav__card-tags">
-                <li>Thiết bị ngoại vi</li>
+                <li>Quản lý dữ liệu</li>
                 <li>Khai thác dữ liệu</li>
                 <li>Trí tuệ nhân tạo</li>
-                <li>Cộng tác số</li>
+                <li>Hợp tác trực tuyến</li>
                 <li>Sáng tạo nội dung</li>
-                <li>An toàn số</li>
+                <li>Liêm chính học thuật</li>
               </ul>
               <button class="home-nav__card-cta" data-target="projects" id="hnav-btn-projects">
                 <span>Xem tất cả dự án</span>
@@ -319,8 +324,7 @@
               </div>
               <h2 class="home-nav__card-title">Reflections<br/><em>&amp; Lessons</em></h2>
               <p class="home-nav__card-desc">
-                Nhìn lại hành trình học tập — những kỹ năng đã tích lũy, những bài học rút ra và định hướng phát triển bản thân trong thời đại số. Đây là góc suy ngẫm thành thật nhất của tôi.
-              </p>
+                Nhìn lại cả hành trình - những kỹ năng đã tích lũy, những bài học rút ra và cả cách mình định vị bản thân trong thời đại số. Đây là góc suy ngẫm thành thật nhất của mình, nơi mình nhìn lại những lần lăn lộn thực tế để sẵn sàng cho những bước đi xa hơn.
               <ul class="home-nav__card-tags">
                 <li>Tư duy phản biện</li>
                 <li>Kỹ năng mềm</li>
@@ -466,7 +470,7 @@
           <div class="home-info__quote-block">
             <div class="home-info__quote-mark">"</div>
             <blockquote class="home-info__quote">
-              Tư duy hệ thống kết hợp với sự sáng tạo — đó là nền tảng tôi đang xây dựng để trở thành người quản trị kinh doanh của thời đại số.
+              Tư duy chiến lược bắt tay cùng sự sáng tạo tự do - Nơi mình định hình phong cách quản trị kinh doanh thực chiến trong kỷ nguyên số.
             </blockquote>
             <div class="home-info__quote-author">— Nguyễn Mai Chi, 2026</div>
           </div>
@@ -479,14 +483,14 @@
                 <span class="contact-row__icon"><i class="ph ph-student"></i></span>
                 <div>
                   <div class="contact-row__label">Trường</div>
-                  <div class="contact-row__value">ĐH Kinh tế — ĐHQGHN</div>
+                  <div class="contact-row__value">Đại học Kinh tế - ĐHQGHN</div>
                 </div>
               </div>
               <div class="contact-row">
                 <span class="contact-row__icon"><i class="ph ph-books"></i></span>
                 <div>
                   <div class="contact-row__label">Ngành</div>
-                  <div class="contact-row__value">Quản trị Kinh doanh (K68)</div>
+                  <div class="contact-row__value">Quản trị Kinh doanh (K70)</div>
                 </div>
               </div>
               <div class="contact-row">
@@ -500,7 +504,7 @@
                 <span class="contact-row__icon"><i class="ph ph-envelope"></i></span>
                 <div>
                   <div class="contact-row__label">Email</div>
-                  <div class="contact-row__value">nguyenmaichi@example.com</div>
+                  <div class="contact-row__value">nguyenmaichi1502007@gmail.com</div>
                 </div>
               </div>
             </div>

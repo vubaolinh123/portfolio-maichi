@@ -1035,17 +1035,37 @@ function showView(viewKey, onComplete) {
   const allViews = Object.values(VIEWS);
   const targetId = VIEWS[viewKey];
 
-  // Transition overlay
-  const tl = gsap.timeline({
-    onComplete: () => {
-      isTransitioning = false;
+  // Safety timeout: if GSAP fails for any reason, reset state after 2s
+  const safetyTimer = setTimeout(() => {
+    isTransitioning = false;
+    // Force show target view as fallback
+    try {
+      allViews.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('hidden', id !== targetId);
+      });
       if (onComplete) onComplete();
       updateNavState(viewKey);
       updateDotNav(viewKey);
       updateTheme(viewKey);
-      // scroll to top
       if (lenis) lenis.scrollTo(0, { immediate: true });
-    }
+    } catch(e) { /* silent */ }
+  }, 2000);
+
+  const completeTransition = () => {
+    clearTimeout(safetyTimer);
+    isTransitioning = false;
+    if (onComplete) onComplete();
+    updateNavState(viewKey);
+    updateDotNav(viewKey);
+    updateTheme(viewKey);
+    if (lenis) lenis.scrollTo(0, { immediate: true });
+  };
+
+  // Transition overlay
+  const tl = gsap.timeline({
+    onComplete: completeTransition,
+    onInterrupt: () => { isTransitioning = false; clearTimeout(safetyTimer); }
   });
 
   // Fade out current
@@ -1055,10 +1075,12 @@ function showView(viewKey, onComplete) {
     ease: 'power2.in',
     onComplete: () => {
       // Hide all, show target
-      allViews.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.toggle('hidden', id !== targetId);
-      });
+      try {
+        allViews.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.toggle('hidden', id !== targetId);
+        });
+      } catch(e) { /* silent */ }
     }
   })
   // Fade in new
@@ -1222,11 +1244,11 @@ async function loadProjectDetail(id) {
 
   // Use inline content map — no fetch needed, works on GitHub Pages
   const inlineContent = CONTENT_MAP[id];
-  if (inlineContent) {
+  if (inlineContent && inlineContent.trim()) {
     renderMarkdown(inlineContent, contentEl);
     animateDetailEntry();
   } else {
-    showDetailError('Không tìm thấy nội dung cho bài tập này.');
+    showDetailError(`Không tìm thấy nội dung cho bài tập "${id}".`);
   }
 }
 
@@ -1251,29 +1273,129 @@ function parseFrontmatter(raw) {
 }
 
 // ──────────────────────────────────────────────────────────────
+// BUILT-IN FALLBACK MARKDOWN PARSER
+// Used when marked.js CDN fails to load (network issues, blocking, etc.)
+// ──────────────────────────────────────────────────────────────
+function simpleMarkdownParse(md) {
+  let html = md
+    // Escape HTML entities first
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  // Code blocks (``` ... ```)
+  html = html.replace(/```[\w]*\n?([\s\S]*?)```/g, (_, code) =>
+    `<pre><code>${code.trim()}</code></pre>`
+  );
+
+  // Inline code
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  // Headings
+  html = html.replace(/^######\s+(.+)$/gm, '<h6>$1</h6>');
+  html = html.replace(/^#####\s+(.+)$/gm, '<h5>$1</h5>');
+  html = html.replace(/^####\s+(.+)$/gm, '<h4>$1</h4>');
+  html = html.replace(/^###\s+(.+)$/gm, '<h3>$1</h3>');
+  html = html.replace(/^##\s+(.+)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^#\s+(.+)$/gm, '<h1>$1</h1>');
+
+  // Horizontal rules
+  html = html.replace(/^[-*_]{3,}\s*$/gm, '<hr>');
+
+  // Blockquotes
+  html = html.replace(/^&gt;\s?(.+)$/gm, '<blockquote>$1</blockquote>');
+
+  // Bold + italic
+  html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+  html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+
+  // Links [text](url)
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+  // Tables (simple GFM style)
+  html = html.replace(/((?:^\|.+\|\n)+)/gm, (table) => {
+    const lines = table.trim().split('\n');
+    let tableHtml = '<table>';
+    lines.forEach((line, i) => {
+      if (/^\|[-| :]+\|$/.test(line)) return; // separator row
+      const cells = line.split('|').filter((_, ci) => ci > 0 && ci < line.split('|').length - 1);
+      const tag = i === 0 ? 'th' : 'td';
+      tableHtml += '<tr>' + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('') + '</tr>';
+    });
+    tableHtml += '</table>';
+    return tableHtml;
+  });
+
+  // Unordered lists
+  html = html.replace(/((?:^[-*+]\s.+\n?)+)/gm, (block) => {
+    const items = block.trim().split('\n')
+      .map(l => `<li>${l.replace(/^[-*+]\s/, '')}</li>`).join('');
+    return `<ul>${items}</ul>`;
+  });
+
+  // Ordered lists
+  html = html.replace(/((?:^\d+\.\s.+\n?)+)/gm, (block) => {
+    const items = block.trim().split('\n')
+      .map(l => `<li>${l.replace(/^\d+\.\s/, '')}</li>`).join('');
+    return `<ol>${items}</ol>`;
+  });
+
+  // Paragraphs — wrap double-newline separated blocks not already wrapped in tags
+  html = html.split(/\n{2,}/).map(block => {
+    block = block.trim();
+    if (!block) return '';
+    if (/^<(h[1-6]|ul|ol|li|pre|blockquote|hr|table|tr|th|td)/.test(block)) return block;
+    return `<p>${block.replace(/\n/g, '<br>')}</p>`;
+  }).join('\n');
+
+  return html;
+}
+
+// ──────────────────────────────────────────────────────────────
 // RENDER MARKDOWN
 // ──────────────────────────────────────────────────────────────
 function renderMarkdown(mdText, container) {
-  if (typeof marked === 'undefined') {
-    container.innerHTML = '<p>marked.js not loaded.</p>';
-    return;
+  // Hide the loading dots if still visible
+  const loadingEl = document.getElementById('detail-loading');
+  if (loadingEl) loadingEl.style.display = 'none';
+
+  let html = '';
+
+  if (typeof marked !== 'undefined') {
+    try {
+      // marked v5+ uses marked.use() instead of marked.setOptions()
+      // marked v4 uses marked.setOptions() — handle both APIs
+      if (typeof marked.use === 'function') {
+        marked.use({ breaks: true, gfm: true });
+      } else if (typeof marked.setOptions === 'function') {
+        marked.setOptions({ breaks: true, gfm: true });
+      }
+      html = marked.parse(mdText);
+    } catch (e) {
+      console.warn('marked.parse() failed, falling back to simple parser:', e);
+      html = simpleMarkdownParse(mdText);
+    }
+  } else {
+    // CDN failed — use built-in fallback parser
+    console.warn('marked.js not loaded from CDN — using built-in fallback parser');
+    html = simpleMarkdownParse(mdText);
   }
 
-  marked.setOptions({
-    breaks: true,
-    gfm: true,
-  });
+  container.innerHTML = html;
 
-  container.innerHTML = marked.parse(mdText);
-
-  // Make all links open in new tab
+  // Make all external links open in new tab
   container.querySelectorAll('a[href]').forEach(a => {
-    if (!a.href.startsWith('#')) {
+    const href = a.getAttribute('href') || '';
+    if (!href.startsWith('#')) {
       a.setAttribute('target', '_blank');
       a.setAttribute('rel', 'noopener noreferrer');
     }
   });
 }
+
 
 // ──────────────────────────────────────────────────────────────
 // DETAIL PAGE ANIMATION
