@@ -749,6 +749,20 @@ function initScrollAnimations() {
     });
   });
 
+  // Giant background watermark scroll parallax — only on desktop/heavy FX
+  if (useHeavyFX && document.querySelector('.decor-watermark')) {
+    gsap.to('.decor-watermark', {
+      y: '60px',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#home',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+      }
+    });
+  }
+
   // Portrait subtle scale — only on non-mobile
   if (useHeavyFX) {
     gsap.to('#about-portrait', {

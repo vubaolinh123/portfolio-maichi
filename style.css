@@ -224,7 +224,6 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 }
 
 /* Concentric circles in top-right background */
-/* Large Concentric Circles in Top-Right Corner (opacity: 0.04) */
 .hero::before {
   content: '';
   position: absolute;
@@ -233,21 +232,14 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   width: min(90vw, 900px);
   height: min(90vw, 900px);
   border-radius: 50%;
-  border: 1px solid var(--burgundy);
-  opacity: 0.04;
-  pointer-events: none;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 100%;
-  transform: translate(-50%, -50%);
-  width: min(60vw, 600px);
-  height: min(60vw, 600px);
-  border-radius: 50%;
-  border: 1px solid var(--burgundy);
-  opacity: 0.04;
+  background: repeating-radial-gradient(
+    circle,
+    transparent,
+    transparent 118px,
+    var(--burgundy) 118px,
+    var(--burgundy) 120px
+  );
+  opacity: 0.08; /* Increased opacity for clear visibility */
   pointer-events: none;
 }
 
@@ -263,6 +255,26 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   overflow: hidden;
 }
 
+/* Giant background chìm watermark */
+.decor-watermark {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: clamp(100px, 14vw, 190px);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.15em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(90, 0, 0, 0.12); /* Clean, visible outline borders */
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  opacity: 0.7; /* distinct presence */
+}
+
 /* Concentric circles in bottom-left background */
 .decor-circle--bottom-left {
   position: absolute;
@@ -272,34 +284,25 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   width: min(85vw, 850px);
   height: min(85vw, 850px);
   border-radius: 50%;
-  border: 1px solid var(--burgundy);
-  opacity: 0.035;
+  background: repeating-radial-gradient(
+    circle,
+    transparent,
+    transparent 118px,
+    var(--burgundy) 118px,
+    var(--burgundy) 120px
+  );
+  opacity: 0.08;
+  pointer-events: none;
 }
 
-.decor-circle--bottom-left::before {
-  content: '';
-  position: absolute;
-  inset: 15%;
-  border-radius: 50%;
-  border: 1px solid var(--burgundy);
-}
-
-.decor-circle--bottom-left::after {
-  content: '';
-  position: absolute;
-  inset: 30%;
-  border-radius: 50%;
-  border: 1px solid var(--burgundy);
-}
-
-/* Architectural Dotted Grid Panels */
+/* Architectural Dotted Grid Panels (larger & clearer) */
 .decor-grid {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   background-image: radial-gradient(var(--burgundy) 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
-  opacity: 0.08;
+  background-size: 18px 18px;
+  opacity: 0.18; /* richer presence */
 }
 
 .decor-grid--left {
@@ -312,11 +315,16 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   bottom: 35%;
 }
 
-/* Floating Outlined Diamonds */
+/* Floating Glassmorphic Diamonds */
 .decor-shape {
   position: absolute;
   border: 1px solid var(--burgundy);
-  opacity: 0.08;
+  background: linear-gradient(135deg, rgba(90, 0, 0, 0.02) 0%, rgba(196, 160, 95, 0.04) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(90, 0, 0, 0.03);
+  opacity: 0.22; /* increased opacity from 0.08 */
   transform-origin: center;
 }
 
@@ -336,7 +344,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   bottom: 20%;
   transform: rotate(45deg);
   border-color: var(--gold);
-  opacity: 0.12;
+  opacity: 0.28;
   animation: float-diamond-2 20s ease-in-out infinite;
 }
 
@@ -396,11 +404,14 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 /* Responsive Hide/Scale for Mobile Viewports */
 @media (max-width: 768px) {
+  .decor-watermark {
+    display: none; /* Hide huge watermark on mobile to avoid layout shifts */
+  }
   .decor-circle--bottom-left {
     width: min(100vw, 450px);
     height: min(100vw, 450px);
     transform: translate(-40%, 40%);
-    opacity: 0.02;
+    opacity: 0.03;
   }
   .decor-grid {
     display: none; /* Hide grids on mobile to keep focus on text */
@@ -410,12 +421,14 @@ body.on-dark .dot-nav__item { background: var(--cream); }
     top: 10%;
     width: 80px;
     height: 80px;
+    opacity: 0.12;
   }
   .decor-shape--diamond-2 {
     right: 8%;
     bottom: 12%;
     width: 60px;
     height: 60px;
+    opacity: 0.16;
   }
   .decor-dot--1, .decor-dot--2, .decor-dot--3 {
     opacity: 0.15; /* Reduce visibility of dust dots */
