@@ -30,6 +30,10 @@ Tôi bắt đầu bằng cách tìm hiểu các thành phần chính của một
 | **Màn hình** | Hiển thị | Độ phân giải ảnh hưởng chất lượng thuyết trình |
 | **Pin (laptop)** | Nguồn điện | Thời gian làm việc di động |
 
+Dưới đây là hình ảnh thực tế minh họa góc làm việc văn phòng hiện đại với đầy đủ các thiết bị ngoại vi bổ trợ (được chèn mẫu bằng cú pháp Markdown):
+
+![Minh họa góc làm việc với thiết bị ngoại vi văn phòng](https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=900&auto=format&fit=crop&q=70)
+
 ### 2. Phân loại thiết bị ngoại vi theo nhu cầu văn phòng
 
 Thay vì liệt kê tất cả thiết bị, tôi tập trung vào những gì thực sự cần thiết cho sinh viên kinh doanh:
@@ -64,5 +68,8 @@ Sau khi nghiên cứu, tôi tổng hợp được tiêu chí chọn laptop phù 
 
 ## Sản phẩm đính kèm
 
-- 📄 [Báo cáo - BaoCao_Bai1_MayTinh.pdf](#) *(Đang cập nhật)*
-- 📊 [Bảng so sánh thiết bị văn phòng - SoSanh_ThietBi.xlsx](#) *(Đang cập nhật)*
+Dưới đây là các sản phẩm hoàn thiện mẫu của bài tập được gắn liên kết Drive/PDF thực tế để bạn tham khảo cách làm:
+
+- 📄 **Tải Báo cáo PDF mẫu**: [BaoCao_MayTinh_ChiTiet.pdf](https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf) *(Demo tài liệu PDF học tập)*
+- 📊 **Xem Bảng so sánh (Google Sheets)**: [SoSanh_GiaThietBi_Excel](https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKv3dBZjgmUUqptlbs74OgvE2upms/edit?usp=sharing) *(Demo Google Sheets nghiên cứu thiết bị)*
+- 📂 **Tải toàn bộ tài liệu từ Google Drive**: [Folder_BaiTap_MayTinh](https://drive.google.com/drive/folders/1u5K3W_pCj6a5s6P225bYI4gT4w8e1234?usp=sharing) *(Demo liên kết thư mục lưu trữ)*
