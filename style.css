@@ -1333,10 +1333,170 @@ body.on-dark .dot-nav__item { background: var(--cream); }
    ============================================================ */
 .projects-section {
   min-height: 100vh;
-  background: var(--burgundy);
+  background:
+    radial-gradient(circle at 50% 30%, rgba(201, 168, 76, 0.04) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(245, 241, 230, 0.02) 0%, transparent 50%),
+    var(--burgundy);
   color: var(--cream);
   padding: clamp(100px, 14vh, 160px) clamp(20px, 6vw, 100px) clamp(80px, 10vh, 120px);
+  position: relative;
+  overflow: hidden;
 }
+
+/* ============================================================
+   PROJECTS SECTION BACKGROUND DECORATIONS
+   ============================================================ */
+.projects__decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Giant background chìm watermark "ARCHIVE" */
+.pdecor-watermark {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: clamp(100px, 14vw, 190px);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.15em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 241, 230, 0.05); /* very faint cream outline */
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+/* Concentric circles in top-right background */
+.pdecor-circle--top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -30%);
+  width: min(80vw, 800px);
+  height: min(80vw, 800px);
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle,
+    transparent,
+    transparent 118px,
+    rgba(245, 241, 230, 0.035) 118px,
+    rgba(245, 241, 230, 0.035) 120px
+  );
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Architectural Dotted Grid Panels */
+.pdecor-grid {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(rgba(245, 241, 230, 0.06) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.8;
+}
+
+.pdecor-grid--left {
+  left: clamp(20px, 3vw, 50px);
+  top: 25%;
+}
+
+.pdecor-grid--right {
+  right: clamp(20px, 4vw, 80px);
+  top: 40%;
+}
+
+/* Floating Glassmorphic Diamonds */
+.pdecor-shape {
+  position: absolute;
+  border: 1px solid rgba(245, 241, 230, 0.06);
+  background: linear-gradient(135deg, rgba(245, 241, 230, 0.01) 0%, rgba(201, 168, 76, 0.02) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  opacity: 0.7;
+  transform-origin: center;
+}
+
+.pdecor-shape--diamond-1 {
+  width: 100px;
+  height: 100px;
+  left: 15%;
+  top: 45%;
+  transform: rotate(45deg);
+  animation: pfloat-diamond-1 18s ease-in-out infinite;
+}
+
+/* Floating Gold Dust Dots */
+.pdecor-dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.15;
+}
+
+.pdecor-dot--1 {
+  left: 35%;
+  top: 15%;
+  animation: pfloat-dot-1 12s ease-in-out infinite;
+}
+
+.pdecor-dot--2 {
+  right: 30%;
+  top: 25%;
+  animation: pfloat-dot-2 15s ease-in-out infinite;
+}
+
+/* Animation Keyframes */
+@keyframes pfloat-diamond-1 {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-15px) rotate(47deg); }
+}
+
+@keyframes pfloat-dot-1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -10px); }
+}
+
+@keyframes pfloat-dot-2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -15px); }
+}
+
+/* Responsive Hide/Scale for Mobile Viewports */
+@media (max-width: 768px) {
+  .pdecor-watermark {
+    display: none; /* Hide huge watermark on mobile */
+  }
+  .pdecor-circle--top-right {
+    width: min(90vw, 400px);
+    height: min(90vw, 400px);
+    transform: translate(30%, -30%);
+    opacity: 0.5;
+  }
+  .pdecor-grid {
+    display: none; /* Hide grids on mobile */
+  }
+  .pdecor-shape--diamond-1 {
+    left: 8%;
+    top: 40%;
+    width: 70px;
+    height: 70px;
+  }
+}
+
 
 .projects__header {
   max-width: 1300px;

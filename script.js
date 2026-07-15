@@ -961,6 +961,12 @@ function buildProjectCards() {
 // ANIMATE PROJECT BLOCKS
 // ──────────────────────────────────────────────────────────────
 function animateProjectCards() {
+  if (!prefersReducedMotion && document.querySelector('.projects__decorations')) {
+    gsap.fromTo('.projects__decorations',
+      { opacity: 0 },
+      { opacity: 1, duration: 1.5, ease: 'power1.out' }
+    );
+  }
   if (prefersReducedMotion) {
     document.querySelectorAll('.project-block').forEach(b => {
       gsap.set(b, { opacity: 1, y: 0 });
