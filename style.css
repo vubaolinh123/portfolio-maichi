@@ -1341,13 +1341,19 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 .projects__header {
   max-width: 1300px;
   margin: 0 auto 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projects__header-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  width: 100%;
 }
 
 .projects__eyebrow {
@@ -1361,10 +1367,11 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 .projects__count {
   font-size: 11px;
   letter-spacing: 0.1em;
-  opacity: 0.4;
-  border: 1px solid rgba(245,241,230,0.2);
-  padding: 6px 16px;
+  opacity: 0.5;
+  border: 1px solid rgba(245,241,230,0.25);
+  padding: 6px 18px;
   border-radius: 100px;
+  background: rgba(245, 241, 230, 0.05);
 }
 
 .projects__main-title {
@@ -1374,6 +1381,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: var(--cream);
+  text-align: center;
 }
 
 .projects__main-title em {
