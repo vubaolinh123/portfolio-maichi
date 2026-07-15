@@ -1152,7 +1152,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
   gap: 0 clamp(40px, 6vw, 80px);
-  align-items: start;
+  align-items: stretch; /* Make both card columns equal height */
 }
 
 .home-nav__divider {
@@ -1267,6 +1267,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   overflow: hidden;
   align-self: flex-start;
   transition: border-color 0.3s ease, color 0.3s ease;
+  margin-top: auto; /* Push CTA button to the bottom of equal-height cards to align vertically */
 }
 
 .home-nav__card-cta::before {
