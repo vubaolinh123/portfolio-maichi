@@ -661,6 +661,13 @@ function initHeroAnimations() {
 
   const tl = gsap.timeline({ delay: 0.2 });
 
+  // Fade in background decorations slowly
+  tl.from('.hero__decorations', {
+    opacity: 0,
+    duration: 1.8,
+    ease: 'power1.out',
+  }, '0');
+
   // Hero title chars stagger
   const heroChars = document.querySelectorAll('#hero-title .char');
   if (heroChars.length) {
