@@ -1367,32 +1367,41 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   font-style: italic;
   letter-spacing: 0.15em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(245, 241, 230, 0.05); /* very faint cream outline */
+  -webkit-text-stroke: 1.5px rgba(245, 241, 230, 0.11); /* Thickened and made more visible */
   z-index: 1;
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
-  opacity: 0.6;
+  opacity: 0.85; /* Increased opacity from 0.6 */
 }
 
-/* Concentric circles in top-right background */
-.pdecor-circle--top-right {
+/* Concentric circles base class */
+.pdecor-circle {
   position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(30%, -30%);
-  width: min(80vw, 800px);
-  height: min(80vw, 800px);
+  width: min(85vw, 850px);
+  height: min(85vw, 850px);
   border-radius: 50%;
   background: repeating-radial-gradient(
     circle,
     transparent,
     transparent 118px,
-    rgba(245, 241, 230, 0.035) 118px,
-    rgba(245, 241, 230, 0.035) 120px
+    rgba(245, 241, 230, 0.08) 118px, /* Increased from 0.035 for distinct visibility */
+    rgba(245, 241, 230, 0.08) 120px
   );
-  opacity: 0.8;
+  opacity: 0.9;
   pointer-events: none;
+}
+
+.pdecor-circle--top-right {
+  top: 0;
+  right: 0;
+  transform: translate(30%, -30%);
+}
+
+.pdecor-circle--bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: translate(-30%, 30%); /* Fills bottom-left blank space */
 }
 
 /* Architectural Dotted Grid Panels */
@@ -1400,9 +1409,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   position: absolute;
   width: 140px;
   height: 140px;
-  background-image: radial-gradient(rgba(245, 241, 230, 0.06) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(245, 241, 230, 0.18) 1.5px, transparent 1.5px); /* Increased from 0.06 */
   background-size: 18px 18px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .pdecor-grid--left {
@@ -1418,19 +1427,19 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 /* Floating Glassmorphic Diamonds */
 .pdecor-shape {
   position: absolute;
-  border: 1px solid rgba(245, 241, 230, 0.06);
-  background: linear-gradient(135deg, rgba(245, 241, 230, 0.01) 0%, rgba(201, 168, 76, 0.02) 100%);
+  border: 1.5px solid rgba(245, 241, 230, 0.15); /* Thicker border */
+  background: linear-gradient(135deg, rgba(245, 241, 230, 0.02) 0%, rgba(201, 168, 76, 0.05) 100%);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   border-radius: 6px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  opacity: 0.7;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0.85; /* Increased from 0.7 */
   transform-origin: center;
 }
 
 .pdecor-shape--diamond-1 {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   left: 15%;
   top: 45%;
   transform: rotate(45deg);
@@ -1444,7 +1453,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   height: 5px;
   border-radius: 50%;
   background: var(--gold);
-  opacity: 0.15;
+  opacity: 0.35; /* Increased from 0.15 */
 }
 
 .pdecor-dot--1 {
@@ -1478,22 +1487,28 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 /* Responsive Hide/Scale for Mobile Viewports */
 @media (max-width: 768px) {
   .pdecor-watermark {
-    display: none; /* Hide huge watermark on mobile */
+    display: none;
   }
-  .pdecor-circle--top-right {
+  .pdecor-circle {
     width: min(90vw, 400px);
     height: min(90vw, 400px);
+    opacity: 0.6;
+  }
+  .pdecor-circle--top-right {
     transform: translate(30%, -30%);
-    opacity: 0.5;
+  }
+  .pdecor-circle--bottom-left {
+    transform: translate(-30%, 30%);
   }
   .pdecor-grid {
-    display: none; /* Hide grids on mobile */
+    display: none;
   }
   .pdecor-shape--diamond-1 {
     left: 8%;
     top: 40%;
     width: 70px;
     height: 70px;
+    opacity: 0.4;
   }
 }
 
