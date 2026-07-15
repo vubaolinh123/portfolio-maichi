@@ -32,7 +32,7 @@ Tôi bắt đầu bằng cách tìm hiểu các thành phần chính của một
 
 Dưới đây là hình ảnh thực tế minh họa góc làm việc văn phòng hiện đại với đầy đủ các thiết bị ngoại vi bổ trợ (được chèn mẫu bằng cú pháp Markdown):
 
-![Minh họa góc làm việc với thiết bị ngoại vi văn phòng HIHI](https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=900&auto=format&fit=crop&q=70)
+![Minh họa góc làm việc với thiết bị ngoại vi văn phòng](https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=900&auto=format&fit=crop&q=70)
 
 ### 2. Phân loại thiết bị ngoại vi theo nhu cầu văn phòng
 
