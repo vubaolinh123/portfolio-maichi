@@ -661,7 +661,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  opacity: 0.5;
+  opacity: 0.7; /* Increased from 0.5 for better readability */
   margin-bottom: 24px;
 }
 
@@ -701,7 +701,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .about__lead {
   font-family: var(--font-serif);
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(19px, 2.2vw, 24px); /* Increased from clamp(18px, 2vw, 22px) */
   font-weight: 400;
   line-height: 1.85;
   margin-bottom: 20px;
@@ -713,9 +713,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 }
 
 .about__body {
-  font-size: 15px;
+  font-size: 16.5px; /* Increased from 15px */
   line-height: 1.95;
-  opacity: 0.7;
+  opacity: 0.88; /* Increased from 0.7 for higher contrast */
   margin-bottom: 48px;
 }
 /* Only hide for animation when JS is running */
@@ -734,11 +734,11 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 }
 
 .about__goals-title {
-  font-size: 10px;
+  font-size: 11px; /* Increased from 10px */
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.45;
+  opacity: 0.65; /* Increased from 0.45 */
   margin-bottom: 24px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--cream-border);
@@ -768,9 +768,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 }
 
 .about__goal-text {
-  font-size: 14px;
+  font-size: 15px; /* Increased from 14px */
   line-height: 1.6;
-  opacity: 0.8;
+  opacity: 0.95; /* Increased from 0.8 */
   margin: 0;
   color: var(--burgundy); /* Burgundy text */
 }
@@ -1455,9 +1455,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .project-block__excerpt {
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: clamp(15px, 1.7vw, 18px); /* Increased from clamp(14px, 1.5vw, 16px) */
   line-height: 1.7;
-  color: rgba(245,241,230,0.8);
+  color: rgba(245, 241, 230, 0.95); /* Increased contrast from 0.8 */
   margin-bottom: 40px;
   max-width: 90%;
 }
@@ -1479,7 +1479,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .project-block__spec-label {
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11px; /* Increased from 10px */
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1489,9 +1489,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 .project-block__spec p,
 .project-block__spec ul {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14.5px; /* Increased from 13px */
   line-height: 1.6;
-  color: rgba(245,241,230,0.7);
+  color: rgba(245, 241, 230, 0.9); /* Increased contrast from 0.7 */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1804,9 +1804,9 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 }
 
 .markdown-content {
-  font-size: 16px;
+  font-size: 17.5px; /* Increased from 16px */
   line-height: 1.85;
-  color: rgba(245, 241, 230, 0.85);
+  color: rgba(245, 241, 230, 0.95); /* Increased contrast from 0.85 */
 }
 
 .markdown-content h2 {
@@ -1830,7 +1830,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .markdown-content p {
   margin-bottom: 20px;
-  opacity: 0.82;
+  opacity: 0.95; /* Increased contrast from 0.82 */
 }
 
 .markdown-content ul,
@@ -1845,7 +1845,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   position: relative;
   padding-left: 20px;
   margin-bottom: 10px;
-  opacity: 0.82;
+  opacity: 0.95; /* Increased contrast from 0.82 */
 }
 
 .markdown-content ul li::before {
@@ -2027,10 +2027,10 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .reflections__subtitle {
   font-family: var(--font-sans);
-  font-size: clamp(15px, 1.6vw, 18px);
+  font-size: clamp(16px, 1.8vw, 20px); /* Increased from clamp(15px, 1.6vw, 18px) */
   line-height: 1.65;
   color: var(--burgundy);
-  opacity: 0.65;
+  opacity: 0.9; /* Increased contrast from 0.65 */
   max-width: 600px;
   margin-top: 24px;
   text-align: center;
@@ -2202,10 +2202,10 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .ref-card__text {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 15px; /* Increased from 14px */
   line-height: 1.7;
   color: var(--burgundy);
-  opacity: 0.7;
+  opacity: 0.9; /* Increased contrast from 0.7 */
 }
 
 /* 1-Column Stack for Lessons Learned */
@@ -2269,10 +2269,10 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .lesson-card__text {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 15.5px; /* Increased from 14px */
   line-height: 1.7;
   color: var(--burgundy);
-  opacity: 0.7;
+  opacity: 0.92; /* Increased contrast from 0.7 */
   margin-bottom: 0;
 }
 
@@ -2298,7 +2298,7 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   justify-content: space-between;
   margin-bottom: 8px;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14.5px; /* Increased from 13px */
   font-weight: 600;
   color: var(--burgundy);
 }
@@ -2386,10 +2386,10 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .future-step__text {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 15.5px; /* Increased from 14px */
   line-height: 1.7;
   color: var(--burgundy);
-  opacity: 0.7;
+  opacity: 0.92; /* Increased contrast from 0.7 */
   max-width: 720px;
 }
 
@@ -2412,8 +2412,8 @@ body.on-dark .dot-nav__item { background: var(--cream); }
   margin-top: 24px;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 18px;
-  opacity: 0.4;
+  font-size: 19px; /* Increased from 18px */
+  opacity: 0.75; /* Increased contrast from 0.4 */
 }
 
 
