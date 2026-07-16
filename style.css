@@ -1715,6 +1715,21 @@ body.on-dark .dot-nav__item { background: var(--cream); }
 
 .project-block__spec ul li {
   position: relative;
+  padding-left: 14px;
+  margin-bottom: 6px;
+}
+
+.project-block__spec ul li:last-child {
+  margin-bottom: 0;
+}
+
+.project-block__spec ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 /* Project CTA Button — Pill Style */

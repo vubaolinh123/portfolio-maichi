@@ -928,7 +928,7 @@ function buildProjectCards() {
           </div>
           <div class="project-block__spec">
             <span class="project-block__spec-label">Process</span>
-            <ol>${processList}</ol>
+            <ul class="process-list">${processList}</ul>
           </div>
           <div class="project-block__spec">
             <span class="project-block__spec-label">Final Deliverables</span>
