@@ -1,5 +1,5 @@
 ---
-title: Tổng quan về trí tuệ nhân tạo
+title: Viết prompt hiệu quả và sử dụng AI
 subtitle: Bài tập 03
 tag: BÀI TẬP 03
 thumbnail: assets/images/bai3-thumb.png
@@ -7,85 +7,30 @@ thumbnail: assets/images/bai3-thumb.png
 
 ## Mục tiêu bài tập
 
-AI không còn là chuyện của tương lai — nó đang thay đổi từng ngành kinh doanh ngay lúc này. Bài tập này giúp tôi **hiểu AI từ góc nhìn của người quản trị kinh doanh** — không phải để lập trình, mà để chiến lược và ra quyết định thông minh hơn. Mục tiêu:
-
-- Hiểu các khái niệm AI cốt lõi mà nhà quản trị cần biết
-- Phân tích cách AI đang disrupting (gián đoạn) từng ngành kinh doanh
-- Nhận biết cơ hội và rủi ro của AI với người học kinh doanh
-- Hình thành quan điểm về cách ứng dụng AI có trách nhiệm
+- **Làm chủ kỹ nghệ giao tiếp số:** Hiểu rõ cơ chế hoạt động của mô hình ngôn ngữ lớn (LLMs) thông qua việc thiết kế câu lệnh đầu vào (Prompt).
+- **Tối ưu hóa hiệu suất học tập:** Ứng dụng các kỹ thuật Prompt nâng cao để định hình kết quả đầu ra của AI chuẩn xác, logic và mang tính học thuật cao.
 
 ---
 
 ## Quá trình thực hiện
 
-### 1. AI nhìn từ góc độ kinh doanh
+Tiến hành thử nghiệm, so sánh 3 cấp độ Prompt (Cơ bản - Cải tiến - Nâng cao) trên ChatGPT qua 3 tác vụ học tập thực tế:
 
-Tôi không cần biết AI hoạt động như thế nào về mặt kỹ thuật — điều quan trọng hơn là hiểu **AI có thể làm gì cho doanh nghiệp**:
+- **Tác vụ 1 - Tóm tắt tài liệu học thuật (đoạn văn tiếng Anh về AI):** Chuyển từ tóm tắt chung chung sang phân cấp rõ rệt (Mục tiêu - Lợi ích - Thách thức) và đóng vai "chuyên gia khoa học dữ liệu" để tạo đoạn văn 100 từ chuẩn học thuật.
+- **Tác vụ 2 - Giải thích khái niệm phức tạp "Blockchain":** Nâng cấp từ định nghĩa thô cứng sang giải thích sinh động thông qua ẩn dụ "cuốn sổ ghi điểm/ghi nợ chung của lớp học" (đóng vai giảng viên CNTT dành cho sinh viên năm nhất).
+- **Tác vụ 3 - Thiết lập bộ 10 câu hỏi ôn tập Cách mạng Công nghiệp 4.0:** Định hình câu hỏi theo 3 mức độ tư duy (Nhận biết - Thông hiểu - Vận dụng), tích hợp đáp án kèm giải thích chi tiết và ví dụ thực tế tại Việt Nam (VinFast).
+- **Phân tích & Đối chiếu:** Lập bảng so sánh kết quả thực nghiệm để làm rõ sự vượt trội về mặt logic, cấu trúc và văn phong của các kỹ thuật Role Prompting, Few-shot Prompting và Chain-of-Thought.
 
-```
-Artificial Intelligence (AI) ứng dụng trong kinh doanh
-├── Tự động hóa (Automation)
-│   ├── RPA — tự động nhập liệu, xử lý hóa đơn
-│   └── Chatbot — chăm sóc khách hàng 24/7
-├── Phân tích & Dự báo (Analytics)
-│   ├── Phân tích hành vi khách hàng
-│   ├── Dự báo nhu cầu tồn kho
-│   └── Credit scoring trong tài chính
-├── Cá nhân hóa (Personalization)
-│   ├── Recommendation engine (Netflix, Shopee, Tiki)
-│   └── Dynamic pricing (Grab, khách sạn, hàng không)
-└── Sáng tạo (Generative AI)
-    ├── Tạo nội dung marketing (GPT-4, Claude)
-    ├── Thiết kế hình ảnh (Midjourney, DALL-E)
-    └── Phân tích hợp đồng, tài liệu pháp lý
-```
+> "AI không thay thế con người, AI chỉ tối ưu hóa năng lực của những ai biết cách giao tiếp và cộng tác thông minh với nó."
 
-### 2. AI đang thay đổi các ngành kinh doanh như thế nào?
+## Bài học ứng dụng
 
-Tôi đã nghiên cứu tác động của AI trong các lĩnh vực liên quan đến ngành học:
-
-| Ngành | AI đang làm gì | Cơ hội cho người quản trị |
-|-------|---------------|--------------------------|
-| **Bán lẻ** | Phân tích giỏ hàng, dự báo xu hướng | Tối ưu assortment, pricing strategy |
-| **Marketing** | Tạo content, target audience chính xác | Giảm chi phí/lead, tăng conversion |
-| **Tài chính** | Phát hiện gian lận, phân tích rủi ro | Quyết định cho vay nhanh hơn, an toàn hơn |
-| **HR** | Sàng lọc CV, phân tích hiệu suất | Tuyển dụng hiệu quả, giảm thiên kiến |
-| **Supply Chain** | Dự báo nhu cầu, tối ưu logistics | Giảm tồn kho dư, tiết kiệm chi phí |
-
-### 3. Thực hành: Dùng AI trong học tập kinh doanh
-
-Tôi đã thực hành sử dụng ChatGPT và Gemini cho các task học tập thực tế:
-
-**Task 1: Phân tích SWOT bằng AI**
-Tôi yêu cầu AI phân tích SWOT cho một mô hình kinh doanh cụ thể, sau đó tự verify và bổ sung. Nhận xét: AI cho framework tốt, nhưng thiếu insight thị trường địa phương → cần kết hợp với nghiên cứu thực tế.
-
-**Task 2: Viết Executive Summary**
-AI tạo bản nháp trong 30 giây. Tôi mất 15 phút tinh chỉnh để phù hợp ngữ cảnh. Tổng thời gian: 20 phút thay vì 1.5 giờ.
-
-**Task 3: Tóm tắt báo cáo dài**
-Upload PDF báo cáo 40 trang, yêu cầu AI tóm tắt 5 điểm chính. Kết quả chính xác 80%, cần đọc lại để kiểm tra.
-
-### 4. Góc nhìn về tương lai: AI và nghề nghiệp
-
-Điều tôi lo ngại và hào hứng đồng thời:
-
-**Công việc quản trị kinh doanh nào sẽ thay đổi:**
-- Phân tích dữ liệu cơ bản → AI làm tốt hơn
-- Viết báo cáo template → AI hỗ trợ đáng kể
-- Chăm sóc khách hàng cơ bản → Chatbot xử lý
-
-**Công việc nào con người vẫn không thể thay thế:**
-- Xây dựng quan hệ và đàm phán → cần EQ cao
-- Quyết định chiến lược trong tình huống không chắc chắn
-- Lãnh đạo và truyền cảm hứng cho đội nhóm
-- Sáng tạo giải pháp kinh doanh chưa từng có
-
-> "Không phải AI thay thế nhà quản trị — AI thay thế nhà quản trị không biết dùng AI. Thế hệ chúng tôi phải trở thành người *cộng tác với AI* chứ không phải *cạnh tranh với AI*."
+- **Tư duy làm chủ công nghệ:** Nhận thức rõ chất lượng đầu ra của AI phụ thuộc vào năng lực đặt câu hỏi của con người. Biết cách kiểm soát "văn phong" và "định dạng" của AI để biến công cụ này thành trợ lý nghiên cứu đắc lực tại UEB.
+- **Kỹ năng giải quyết vấn đề hệ thống:** Học được mẹo chia nhỏ các nhiệm vụ phức tạp, cung cấp bối cảnh/ví dụ minh họa và luôn duy trì tinh thần hoài nghi, kiểm chứng thông tin thay vì lạm dụng nguyên văn từ AI.
+- **Ứng dụng thực tế tương lai:** Nắm vững các nguyên tắc viết prompt cân bằng giữa định hướng chặt chẽ và tính linh hoạt sáng tạo để áp dụng vào hoạt động làm việc nhóm, phân tích dữ liệu và quản trị kinh doanh số sau này.
 
 ---
 
 ## Sản phẩm đính kèm
 
-- 📄 [Báo cáo - BaoCao_Bai3_TongQuanAI.pdf](#) *(Đang cập nhật)*
-- 🗺️ [Mind map AI trong kinh doanh - MindMap_AI_Kinh_Doanh.pdf](#) *(Đang cập nhật)*
-- 📊 [Slide thuyết trình - Slide_AI_Business.pptx](#) *(Đang cập nhật)*
+- 📄 [BaoCao_BaiTap03.pdf](https://drive.google.com/file/d/1Qsmo9FNH82SoHqcn-rlxzZYwFLLIA3G1/view?usp=sharing)

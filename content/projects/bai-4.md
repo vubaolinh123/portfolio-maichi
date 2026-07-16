@@ -1,5 +1,5 @@
 ---
-title: Giao tiếp và hợp tác trong môi trường số
+title: Hợp tác trực tuyến trong môi trường số
 subtitle: Bài tập 04
 tag: BÀI TẬP 04
 thumbnail: assets/images/bai4-thumb.png
@@ -7,99 +7,38 @@ thumbnail: assets/images/bai4-thumb.png
 
 ## Mục tiêu bài tập
 
-Kỹ năng giao tiếp và hợp tác là **năng lực số 1 mà nhà tuyển dụng tìm kiếm** ở sinh viên mới ra trường. Trong thời đại hybrid work, kỹ năng này đòi hỏi phải thành thạo cả môi trường số lẫn trực tiếp. Mục tiêu:
-
-- Thành thạo các công cụ cộng tác số phổ biến nhất trong môi trường doanh nghiệp
-- Nắm vững nguyên tắc giao tiếp chuyên nghiệp qua email, video call
-- Biết quản lý dự án nhóm hiệu quả trong môi trường phân tán
-- Xây dựng digital presence chuyên nghiệp phù hợp với ngành kinh doanh
+- **Tối ưu hóa quy trình làm việc nhóm:** Ứng dụng đồng bộ hệ thống công cụ đám mây để quản trị dự án, lưu trữ tài nguyên và tương tác thời gian thực.
+- **Làm chủ kỹ năng sản xuất số:** Chuyển hóa kết quả nghiên cứu lý thuyết thành sản phẩm truyền thông video trực quan, chuyên nghiệp.
 
 ---
 
 ## Quá trình thực hiện
 
-### 1. Bản đồ công cụ cộng tác số trong doanh nghiệp
+### 1. Chọn đề tài và nhận nhiệm vụ
 
-Tôi nghiên cứu và tổng hợp hệ sinh thái công cụ mà doanh nghiệp Việt Nam đang dùng phổ biến:
+- **Đề tài dự án nhóm:** Nghiên cứu ứng dụng của AI và công nghệ số trong lĩnh vực Ngoại ngữ và giáo dục.
+- **Vai trò cá nhân:** Quay và dựng (Edit) Video truyền thông trực quan cho dự án.
 
-**Communication (Giao tiếp):**
-- **Email** — vẫn là kênh chính thức số 1
-- **Slack / Microsoft Teams** — nhắn tin nội bộ, cộng tác dự án
-- **Zalo** — phổ biến tại Việt Nam, cả cá nhân lẫn doanh nghiệp
+### 2. Thực hành
 
-**Video Meetings:**
-- **Google Meet** — phổ biến, miễn phí, tích hợp Calendar
-- **Zoom** — chất lượng tốt, nhiều tính năng enterprise
-- **Microsoft Teams** — all-in-one cho doanh nghiệp dùng M365
+Thiết lập và vận hành hệ thống phối hợp 4 công cụ số trong suốt 2 tuần triển khai dự án:
 
-**Project Management (Quản lý dự án):**
-- **Trello** — Kanban đơn giản, phù hợp nhóm nhỏ
-- **Notion** — workspace linh hoạt nhất: docs + tasks + database
-- **Asana / Monday.com** — dành cho team lớn, nhiều dự án song song
+- **Quản lý tiến độ (Trello):** Khởi tạo bảng công việc cá nhân phân theo các cột To-do, Doing (Lên storyboard, Quay tư liệu, Dựng demo v1), và Done để nhóm tiện theo dõi.
+- **Xây dựng kịch bản (Google Docs):** Đóng góp ý kiến chuyên môn về khung hình, thời lượng trực tiếp trên tài liệu kịch bản tổng hợp chung của nhóm.
+- **Tương tác & Duyệt file (Microsoft Teams):** Họp trực tuyến chia sẻ màn hình dựng để chốt hiệu ứng, phụ đề tiếng Anh; cập nhật tiến độ liên tục trên kênh chat.
+- **Tổ chức lưu trữ (Google Drive):** Phân chia hệ thống thư mục khoa học (vid 1, vid 2, vid 3, Final) để quản lý các tệp tin media dung lượng lớn, tránh nhầm lẫn.
 
-**Cộng tác tài liệu:**
-- **Google Workspace** (Docs, Sheets, Slides, Drive) — real-time cộng tác tốt nhất
-- **Microsoft 365** — tiêu chuẩn trong doanh nghiệp lớn
+## Bài học ứng dụng
 
-### 2. Thực hành: Dự án nhóm hoàn toàn online
+- **Giải quyết thách thức đồng bộ số:** Áp dụng công cụ nén video chuẩn cao để tối ưu tốc độ tải lên Drive và quy hoạch feedback tập trung tại một luồng tin nhắn trên Teams để tránh sót ý kiến.
+- **Quy trình hóa để tối ưu hiệu suất:** Thiết lập quy trình duyệt 2 bước (Trưởng nhóm duyệt khung kịch bản trước khi tiến hành dựng kỹ xảo) giúp giảm 40% thời gian trễ và tránh sửa đổi timeline phức tạp.
+- **Nâng cao năng lực cộng tác số:** Nhận thức sâu sắc vai trò của công cụ số như chiếc cầu nối giao tiếp đắc lực giữa bộ phận kỹ thuật (quay dựng) và bộ phận nội dung, chuẩn bị hành trang chuyên nghiệp cho môi trường đại học và doanh nghiệp.
 
-Trong bài tập này, nhóm 4 người của tôi thực hiện một mini case study về phân tích thị trường F&B hoàn toàn trực tuyến. Quy trình chúng tôi xây dựng:
-
-**Tuần 1 — Kick-off:**
-- Họp trên Google Meet 30 phút → phân công nhiệm vụ rõ ràng
-- Tạo Trello board với cột: Backlog / In Progress / Review / Done
-- Lập Google Sheet theo dõi tiến độ từng người
-
-**Tuần 2-3 — Execution:**
-- Cộng tác trên Google Docs (nhiều người edit cùng lúc)
-- Check-in hàng ngày qua nhóm chat Messenger (5 phút/ngày)
-- Comment và review lẫn nhau trực tiếp trên document
-
-**Tuần 4 — Finalization:**
-- Review tổng thể qua Google Meet
-- Trình bày qua Google Slides — share screen live
-
-**Bài học từ dự án:**
-> Điều khó nhất không phải công việc — mà là duy trì giao tiếp đều đặn khi không gặp mặt trực tiếp. Chúng tôi nhận ra phải xây dựng "nhịp làm việc" (working rhythm) rõ ràng để tránh miscommunication.
-
-### 3. Nguyên tắc giao tiếp email chuyên nghiệp
-
-Là sinh viên kinh doanh, email là kỹ năng tôi phải thành thạo ngay từ năm 1:
-
-**Cấu trúc email hiệu quả:**
-
-```
-Tiêu đề: [Rõ ràng] [Có hành động nếu cần]
-Ví dụ: "Xin ý kiến về đề cương báo cáo — cần phản hồi trước 15/7"
-
-Thân:
-1. Opening: Nêu lý do liên hệ (1-2 câu)
-2. Body: Thông tin chính, dùng bullet points
-3. Ask: Yêu cầu cụ thể (làm gì, deadline khi nào)
-4. Closing: Lịch sự, đề xuất bước tiếp theo
-```
-
-**Email đến giảng viên, đối tác:**
-- Luôn dùng kính ngữ phù hợp (Thưa Thầy/Cô, Kính gửi Anh/Chị)
-- Đính kèm file trước khi gửi (kiểm tra lại tên file)
-- Trả lời trong vòng 24 giờ — đây là chuẩn professional
-
-### 4. Xây dựng LinkedIn Profile chuyên nghiệp
-
-Phần thú vị nhất: Tôi học cách xây dựng hiện diện số (digital presence) cho sinh viên kinh doanh trên LinkedIn:
-
-- **Ảnh đại diện** — chuyên nghiệp, nụ cười tự nhiên, nền trung tính
-- **Headline** — không chỉ "Sinh viên" mà "Business Administration Student | Passionate about Digital Marketing & E-commerce"
-- **About** — 3 câu: Tôi là ai, tôi đang học gì, tôi muốn làm gì
-- **Education** — thêm GPA (nếu tốt), môn học nổi bật, câu lạc bộ
-- **Projects** — liệt kê portfolio, case study đã làm
-
-> "Trong kinh doanh, cách bạn giao tiếp quan trọng không kém nội dung bạn truyền đạt. Một email viết tốt có thể mở cánh cửa thực tập; một email cẩu thả có thể đóng nó mãi mãi."
+> "Công nghệ số xóa nhòa khoảng cách địa lý, nhưng sự thấu hiểu và phân bổ nguồn lực hợp lý mới là chìa khóa tạo nên sức mạnh đồng đội."
 
 ---
 
 ## Sản phẩm đính kèm
 
-- 📄 [Báo cáo - BaoCao_Bai4_GiaoTiepSo.pdf](#) *(Đang cập nhật)*
-- 📋 [Hướng dẫn email chuyên nghiệp - Email_Guide.pdf](#) *(Đang cập nhật)*
-- 🖼️ [Mini Case Study F&B - CaseStudy_FnB.pdf](#) *(Đang cập nhật)*
+- 📄 [BaoCao_BaiTap04.pdf](https://drive.google.com/file/d/1jcmuykKWRYf72idchTxD2hFbH05CDkaW/view?usp=sharing) 
+- 🎥 [Video.mp4](https://drive.google.com/file/d/1tGF4I1JGF0YReJMToux3PJ80gG7Vl6dk/view?usp=sharing) 

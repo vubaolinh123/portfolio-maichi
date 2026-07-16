@@ -1,5 +1,5 @@
 ---
-title: Sáng tạo nội dung số
+title: Sáng tạo nội dung số với AI
 subtitle: Bài tập 05
 tag: BÀI TẬP 05
 thumbnail: assets/images/bai5-thumb.png
@@ -7,89 +7,33 @@ thumbnail: assets/images/bai5-thumb.png
 
 ## Mục tiêu bài tập
 
-**Content is King** — câu này đã cũ nhưng chưa bao giờ đúng hơn trong thời đại mạng xã hội. Với sinh viên kinh doanh, khả năng tạo nội dung số là lợi thế cạnh tranh cực lớn trong xây dựng thương hiệu cá nhân và marketing doanh nghiệp. Mục tiêu:
-
-- Hiểu quy trình sản xuất nội dung từ ý tưởng đến xuất bản
-- Thực hành các định dạng: bài viết, infographic, video ngắn
-- Ứng dụng tư duy marketing vào nội dung số
-- Học cách đo lường và tối ưu hiệu quả nội dung
+- **Làm chủ quy trình đồng sáng tạo số:** Phối hợp nhịp nhàng các công cụ AI thế hệ mới (tạo văn bản, tạo hình ảnh, hỗ trợ thiết kế) để hoàn thiện một sản phẩm truyền thông số đồng bộ.
+- **Dịch chuyển vai trò sáng tạo:** Nâng cao năng lực từ "người thực thi kỹ thuật thô" lên vai trò "Biên tập viên" và "Đạo diễn nghệ thuật" để tối ưu hóa hiệu suất thiết kế.
 
 ---
 
 ## Quá trình thực hiện
 
-### 1. Content Strategy cho sinh viên kinh doanh
+### 1. Chọn dự án
 
-Trước khi tạo nội dung, tôi tìm hiểu về **Content Strategy** — tư duy của người làm marketing chuyên nghiệp:
+- **Dự án thực hiện:** Thiết kế bài thuyết trình đề tài “Mẹo quản lý thời gian và học tập hiệu quả cho sinh viên”.
 
-**Câu hỏi cốt lõi trước khi tạo content:**
-1. **Ai là audience?** → Sinh viên cùng ngành, nhà tuyển dụng, hay khách hàng tiềm năng?
-2. **Họ muốn gì?** → Thông tin hữu ích, giải trí, hay cảm hứng?
-3. **Mình muốn gì?** → Xây dựng brand cá nhân, bán hàng, hay chỉ chia sẻ kiến thức?
-4. **Kênh nào phù hợp?** → LinkedIn (B2B professional), TikTok (viral rộng), Instagram (visual storytelling)?
-5. **Đo lường bằng gì?** → Views, engagement rate, leads generated?
 
-### 2. Quy trình sản xuất nội dung
+### 2. Thực hành
 
-```
-IDEATE → PLAN → CREATE → REVIEW → PUBLISH → ANALYZE → OPTIMIZE
-```
+Triển khai quy trình tích hợp và biên tập thủ công qua 3 nhóm công cụ AI:
+- **Xây dựng khung nội dung (Claude & ChatGPT):**
+    + Sử dụng Claude để thiết lập bộ khung học thuật sâu sắc (lồng ghép các thuyết khoa học như ma trận Eisenhower, nguyên lý Pareto, tháp học tập,đường cong lãng quên Ebbinghaus).
+    + Tích hợp các mẹo thực tế, dễ tiếp cận từ ChatGPT và biên tập thủ công thành cấu trúc slide 8 phần mạch lạc, cá nhân hóa.
+- **Sáng tạo chất liệu hình ảnh (Dreamina):** Thiết kế bộ ảnh minh họa 3D isometric/hologram độc quyền, đồng bộ màu sắc pastel (cam - kem - xanh dương) cho từng phần của bài thuyết trình. Tiến hành chỉnh sửa loại bỏ các chi tiết thừa từ ảnh AI thô.
+- **Thiết kế và dàn trang (Canva AI):** Ứng dụng Canva AI để tạo layout thô nhanh chóng. Thực hiện tinh chỉnh thủ công: giãn chữ, tách đôi các slide quá tải thông tin, nâng cỡ chữ đạt chuẩn trình chiếu giảng đường và dàn dựng hình ảnh theo quy tắc 1/3.
 
-**Tôi thực hành quy trình này với chủ đề "Xu hướng kinh doanh 2024 cho Gen Z":**
+## Bài học ứng dụng
 
-**Bước 1 — Ideate:** Brainstorm 20 ý tưởng trong 10 phút (không lọc), sau đó chọn 3 tốt nhất
+- **Năng lực kiểm chứng thông tin:** Nhận diện và chủ động ngăn chặn hiện tượng "ảo giác AI" (bịa số liệu) bằng cách đối chiếu chéo các thông tin của AI với nguồn nghiên cứu chính thống trên Google Scholar.
+- **Bảo vệ liêm chính học thuật và bảo mật:** Cam kết công khai minh bạch lịch sử sử dụng prompt, chỉ dùng hình ảnh AI cho mục đích học tập phi thương mại và tuân thủ nguyên tắc ẩn danh dữ liệu cá nhân khi tương tác với chatbot.
+- **Bứt phá hiệu suất học tập:** Tiết kiệm 80% thời gian thiết kế kỹ thuật lặp đi lặp lại. Từ đó, có thêm nhiều thời gian để đào sâu bản chất kiến thức và rèn luyện phong thái thuyết trình trước đám đông tại UEB.
 
-**Bước 2 — Plan:** Xác định format (LinkedIn article), cấu trúc (5 xu hướng, mỗi xu hướng 200 chữ)
-
-**Bước 3 — Create:** Viết draft đầu tiên không cần hoàn hảo, dùng AI hỗ trợ outline
-
-**Bước 4 — Review:** Đọc lại sau 24 giờ với con mắt "người đọc" chứ không phải "người viết"
-
-**Bước 5 — Publish:** Đăng đúng giờ cao điểm (LinkedIn: thứ 3-4, 8-10h sáng)
-
-**Bước 6 — Analyze:** Sau 7 ngày xem: impressions, clicks, comments, shares
-
-### 3. Thực hành: 3 định dạng content
-
-**📝 LinkedIn Article: "5 Kỹ năng số sinh viên kinh doanh cần học ngay hôm nay"**
-
-Tôi viết bài 800 chữ với cấu trúc:
-- Hook mạnh: số liệu gây bất ngờ về thị trường lao động
-- 5 kỹ năng cụ thể: Data literacy, AI literacy, Digital communication, Content creation, Cybersecurity basics
-- Kết với call-to-action: "Bạn đang master kỹ năng nào rồi?"
-
-*Bài học: Mỗi từ phải có lý do tồn tại. Câu dài không bằng câu ngắn mà đủ nghĩa.*
-
-**🖼️ Infographic: "Bản đồ công cụ AI cho sinh viên kinh doanh"**
-
-Tạo bằng Canva theo nguyên tắc:
-
-| Yếu tố | Nguyên tắc áp dụng |
-|--------|-------------------|
-| Layout | Z-pattern (đọc từ trái sang phải, trên xuống dưới) |
-| Màu sắc | 3 màu chủ đạo, tỷ lệ 60-30-10 |
-| Typography | 2 font (serif cho tiêu đề, sans-serif cho body) |
-| Icons | Nhất quán style, nguồn từ Flaticon |
-| Whitespace | Đủ khoảng trống để "thở" |
-
-**🎬 TikTok/Reels: "Học kinh doanh bằng xem phim"**
-
-Video 45 giây format: Hook (5s) → Main content (30s) → CTA (10s)
-- Script viết trước, mỗi cảnh ≤ 3 giây để giữ attention
-- Subtitles tự động bằng CapCut AI (quan trọng: 85% người xem TikTok không bật âm)
-- Music: chọn trending sound trước, viết content phù hợp sau
-
-### 4. AI trong content creation
-
-Công cụ AI tôi đã thử và nhận xét thật sự:
-
-| Công cụ | Task | Đánh giá |
-|---------|------|-----------|
-| ChatGPT | Outline, brainstorm, draft | ★★★★☆ — Cần customize nhiều |
-| Canva AI | Magic Write, Design suggestions | ★★★☆☆ — Tốt cho template |
-| CapCut | Auto subtitle, auto cut | ★★★★★ — Tiết kiệm thời gian nhất |
-| Midjourney | Hình ảnh cho infographic | ★★★★☆ — Đẹp nhưng cần prompt kỹ |
-| Grammarly | Kiểm tra tiếng Anh | ★★★★★ — Không thể thiếu |
 
 > "Nội dung tốt nhất không phải nội dung hoàn hảo — mà là nội dung *đúng người, đúng thời điểm, đúng cảm xúc*. AI có thể giúp tạo nội dung nhanh hơn, nhưng chỉ bạn mới biết người đọc của mình cần gì."
 
@@ -97,7 +41,5 @@ Công cụ AI tôi đã thử và nhận xét thật sự:
 
 ## Sản phẩm đính kèm
 
-- 📄 [Báo cáo - BaoCao_Bai5_SangTaoNoiDung.pdf](#) *(Đang cập nhật)*
-- 🖼️ [Infographic "AI Tools Map" - Infographic_AITools.png](#) *(Đang cập nhật)*
-- ✍️ [LinkedIn Article Draft - Article_KyNangSo.pdf](#) *(Đang cập nhật)*
-- 🎥 [Video 45s - Video_HocKinhDoanh.mp4](#) *(Đang cập nhật)*
+- 📄 [BaoCao_BaiTap05.pdf](https://drive.google.com/file/d/1zVFDbm28TeB5ortJz4_Mfx8SB29Pv9t0/view?usp=sharing) 
+- 📊 [Slide_AI.pptx](https://canva.link/eyf05g51k0zr35o)
