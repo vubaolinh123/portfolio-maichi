@@ -911,6 +911,9 @@ function buildProjectCards() {
     const deliverablesList = (proj.deliverables || [])
       .map(d => `<li>${d}</li>`).join('');
 
+    const processList = (proj.process || [])
+      .map(step => `<li>${step}</li>`).join('');
+
     block.innerHTML = `
       <!-- Content side -->
       <div class="project-block__content">
@@ -925,7 +928,7 @@ function buildProjectCards() {
           </div>
           <div class="project-block__spec">
             <span class="project-block__spec-label">Process</span>
-            <p>${proj.process || ''}</p>
+            <ol>${processList}</ol>
           </div>
           <div class="project-block__spec">
             <span class="project-block__spec-label">Final Deliverables</span>
